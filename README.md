@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# \Game Inventory
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
  > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
@@ -19,11 +19,22 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
+Game inventory to add and sort items based on their attack and defense power to help players with full inventory items.
+
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
+For this project we will be using C++ as the primary language.
+
  > * What will be the input/output of your project?
+The input will be game items such as weapons and armor stats.
+The output will be sorted items based on the attack and defense and locked items, which will be at the top.
+
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
+Abstract Factory : Using the Abstract Factory design pattern, varying collectib game objects can be easily created under the general classification of items. The user will be able to add items to their inventory by inputting the classification (weapons, armor, etc) and the related stats, which will be stored and ready to be organized. Using an abstract factory allows the user to input a variety of items and variations of each classification while allowing them to be compared for sorting.
+Strategy : Strategy uses algorithms to sort items and organize items in an order. This will show players the essential items in the order of best to worst. Using these algorithms, items with the highest attack and defense power will be on top, which will help players see them and effectively use them to win the game.
+State : The State design pattern will be used in our program to lock items into a state where they will never be removed. This will be useful to the user in case they have a specific item that regardless of its properties, they want to keep. Along with this feature, should the player die, they will not lose these specific items. The implementation of this design pattern will make it easier to add these features to our program.
+
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
  > ## Phase II
