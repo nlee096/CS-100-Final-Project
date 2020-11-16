@@ -49,9 +49,22 @@
  
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
- 
- > <img src="images/Project.pdf">
- 
+ > OMT Class Diagram:
+ > <img src="images/Class_Diagram.pdf">
+ > Class Diagram description:
+ > * Interface:
+ > The interface’s job is to store the vector of items while also providing a way for the user to interact with the features of the program. The user will input a number corresponding to their class so that the items they create will correspond to their class. It also holds a vector of Item pointers to keep track of all the items the user puts in or removes. It also stores a pointer to ItemOrder so that the user has access to ItemOrder through the interface. Through the interface, the user can add/remove armor and weapons, favorite and unfavorite items, and display their inventory in order of highest attack or defense. 
+
+> * Item:
+> 	The item’s within our program use the Abstract Factory design pattern by allowing the user to create items based on their specific class. The abstract Item class has a subclass system in which there are four subclasses to choose from and the item created will be based on that.The user will be able to input several numbers such as the values for the attack or defense based on the item as well as give a name to the item they are creating. Furthermore, the items that are created will be set to a default unlocked state. All items are stored as pointers in the interface class. All subclasses have functions Favorite, Unfavorite, and Display. The Favorite function changes the state to locked while the Unfavorite function changes it to unlocked. However the display function calls the display function in the State class as Display() will behave differently depending on the state of the item.
+
+> * ItemOrder:
+> 	ItemOrder uses the strategy design pattern by having subclasses that order and display the vector of items differently depending on user input. ItemOrder is an abstract parent class that has 2 subclasses HighestAttack and HighestDefence each with their own implementation of the pure virtual function called display. HighestAttack’s display will order the vector with items with higher attack to be closer to the front while highest Defense will do the same but based on the defense stat. 
+
+> * State:
+> 	Using the state design pattern will let us change how specific functions will be implemented based on the item’s state. The player will be able to control the state of the favorite and unfavorable items thereby determining which items will be locked or unlocked. The abstract class State is aggregated to Item as the subclasses of Item have a display function that will behave differently depending on the items state. Item’s display function will call either LockedState or UnlockedState’s display function depending on what Item’s currentState variable is. 
+>
+>
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
