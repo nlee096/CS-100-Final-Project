@@ -49,9 +49,11 @@
  
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
- > OMT Class Diagram:
+ 
+ OMT Class Diagram:
  > <img src="images/Class_Diagram.pdf">
- > Class Diagram description:
+ 
+ Class Diagram description:
  > * Interface:
  > The interface’s job is to store the vector of items while also providing a way for the user to interact with the features of the program. The user will input a number corresponding to their class so that the items they create will correspond to their class. It also holds a vector of Item pointers to keep track of all the items the user puts in or removes. It also stores a pointer to ItemOrder so that the user has access to ItemOrder through the interface. Through the interface, the user can add/remove armor and weapons, favorite and unfavorite items, and display their inventory in order of highest attack or defense. 
 
