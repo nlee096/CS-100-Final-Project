@@ -46,12 +46,10 @@
  > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
  >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
  >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
- > Class Diagram:
- <img src=<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/5e675938-3a06-424e-b222-9eb95cddc8aa" id="xgzOWfxZxS5p"></iframe></div>
  
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
- 
+ <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/5e675938-3a06-424e-b222-9eb95cddc8aa" id="sjzOJ1aqSUWd"></iframe></div>
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
