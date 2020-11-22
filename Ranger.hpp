@@ -16,4 +16,4 @@ class Ranger : public UserClass{
                         return lightArmor;
                 }
 }; 
-		
+#endif //__RANGER_HPP__		
