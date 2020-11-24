@@ -7,7 +7,7 @@ using namespace std;
 
 class LockedState : public State{
 	public:
-		void Display(string itemName{t
+		void Display(string itemName){
 			cout << "\033[1;33m ** \033[0m" << itemName << "\033[1;33m ** \033[0m" << endl; 
 		}
 		bool getState(){

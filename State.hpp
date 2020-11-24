@@ -1,5 +1,5 @@
 #ifndef __STATE_HPP__
-#define ___STATE_HPP__
+#define __STATE_HPP__
 
 class State {
 	public:

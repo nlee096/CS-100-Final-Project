@@ -7,11 +7,11 @@ using namespace std;
 
 class UnlockedState : public State{
         public:
-                void Display(string itemName{t
+                void Display(string itemName){
                         cout << itemName << endl;
                 }
                 bool getState(){
-                        return true;
+                        return false;
                 }
 };
 #endif //__UNLOCKEDSTATE_HPP
