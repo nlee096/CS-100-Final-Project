@@ -2,7 +2,7 @@
 #define __RANGER_HPP__
 
 #include "UserClass.hpp"
-#include "LightAmor.hpp"
+#include "LightArmor.hpp"
 #include "Ranged.hpp"
 
 class Ranger : public UserClass{
