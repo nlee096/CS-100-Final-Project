@@ -11,9 +11,27 @@ class Melee : public Weapons {
             defense = 0;
             currentState = new UnlockedState();
         }
-        void Favorite();
-        void Unfavorite();
-        void Display();
+        void Favorite() {
+			if(currentState->getState()) {
+				return;
+			}
+			else {
+				delete currentState;
+				currentState = new LockedState();
+			}
+		}
+        void Unfavorite() {
+			if(currentState->getState()) {
+				delete currentState;
+				currentState = new UnlockedState();
+			}
+			else {
+				return;
+			}
+		}
+        void Display() {
+			currentState->Display(this->name);
+		}
         bool getState() {
             return currentState->getState();
         }
