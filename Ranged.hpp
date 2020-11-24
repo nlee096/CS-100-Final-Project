@@ -3,7 +3,7 @@
 
 #include "Weapons.hpp"
 using namespace std;
-Class Ranged : public Weapons {
+class Ranged : public Weapons {
     Public:
         Ranged(int atk, string name) {
             attack = atk;
