@@ -7,6 +7,7 @@ class LightArmor : public Armors{
     Public:
     LightArmor(int def, string name) {
             defense = def;
+            Attack = 0;
             this->name = name;
             currentState = new UnlockedState();
         }

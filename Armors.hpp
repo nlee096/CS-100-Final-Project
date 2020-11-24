@@ -7,6 +7,7 @@ using namespace std;
 class State;
 class Armors {
 Private:
+    int attack;
     int defense;
     string name;
     State* currentState;
@@ -16,6 +17,7 @@ Public:
     virtual void Unfavorite() = 0;
     virtual void Display() = 0;
     virtual bool getState() = 0;
+    virtual int getAttack() = 0;
     virtual int getDefense() = 0;
 
 };

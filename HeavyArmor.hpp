@@ -1,4 +1,4 @@
-#ifndef __HEAVYARMOR_HPP__
+fndef __HEAVYARMOR_HPP__
 #define __HEAVYARMOR_HPP__
 
 #include "Armors.hpp"
@@ -7,6 +7,7 @@ class HeavyArmor : public Armors {
 Public:
 	HeavyArmor(int def, string name) {
 		defense = def;
+		attack = 0;
 		this->name = name;
 		currentState = new UnlockedState();
 	}
