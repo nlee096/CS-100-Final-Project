@@ -39,7 +39,7 @@ class Melee : public Weapons {
             return this->attack;
         }
         int getDefense() {
-            return this->defense();
+            return this->defense;
         }
 
 };
