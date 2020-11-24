@@ -1,4 +1,4 @@
-fndef __HEAVYARMOR_HPP__
+#ifndef __HEAVYARMOR_HPP__
 #define __HEAVYARMOR_HPP__
 
 #include "Armors.hpp"
