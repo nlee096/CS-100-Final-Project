@@ -1,6 +1,7 @@
 #ifndef __RANGED_TESTS_HPP__
 #define __RANGED_TESTS_HPP__
 
+#include "gtest/gtest.h"
 #include <iostream>
 #include "Ranger.hpp"
 
