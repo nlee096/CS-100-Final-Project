@@ -10,31 +10,31 @@
 using namespace std;
 
 TEST(WarriorArmorTest, StateArmor) {
-	Warrio* test = new Warrio();
+	Warrior* test = new Warrio();
 
-	HeavyArmor* testHeavyArmor = test->AddHeavyArmor(5, "HeavyArmor");
+	HeavyArmor* testHeavyArmor = test->AddArmor(5, "HeavyArmor");
 
 
 	EXPECT_EQ(testHeavyArmor->getState(), false);
 	test->Favorite();
 	EXPECT_EQ(testHeavyArmor->getState(), true);
-	test->UnFavorite();
+	test->Unfavorite();
 	EXPECT_EQ(testHeavyArmor->getState(), false);
 }
 
 TEST(WarriorArmorTest, getDefAtk) {
-	Warrio* test = new Warrio();
+	Warrior* test = new Warrio();
 
-	HeavyArmor* testHeavyArmor = test->AddHeavyArmor(5, "toughtArmor");
+	HeavyArmor* testHeavyArmor = test->AddArmor(5, "toughtArmor");
 
 	EXPECT_EQ(testHeavyArmor->getAttack(), 0);
 	EXPECT_EQ(testHeavyArmor->getDefense(), 5);
 }
 
 TEST(WarriorArmorTest, Display_A) {
-	Warrio* test = new Warrio();
+	Warrior* test = new Warrio();
 
-	HeavyArmor* testHeavyArmor = test->AddHeavyArmor(5, "HevenlyArmor");
+	HeavyArmor* testHeavyArmor = test->AddArmor(5, "HevenlyArmor");
 
 	cout << "EXPECT:" << "HevenlyArmor" << endl;
 	cout << "ACTUAL:";
