@@ -10,20 +10,20 @@ using namespace std;
 TEST(RangedArmorTest, StateItems) {
 	Ranger* test = new Ranger();
 
-	LightArmor* testLightArmor = test->AddLightArmor(5, "lightArmor");
+	LightArmor* testLightArmor = test->AddArmor(5, "lightArmor");
 
 
 	EXPECT_EQ(testLightArmor->getState(), false);
 	test->Favorite();
 	EXPECT_EQ(testLightArmor->getState(), true);
-	test->UnFavorite();
+	test->Unfavorite();
 	EXPECT_EQ(testLightArmor->getState(), false);
 }
 
 TEST(RangedArmorTest, getDefAtk) {
 	Ranger* test = new Ranger();
 
-	LightArmor* testLightArmor = test->AddLightArmor(5, "weightlessArmor");
+	LightArmor* testLightArmor = test->AddArmor(5, "weightlessArmor");
 
 	EXPECT_EQ(testLightArmor->getAttack(), 0);
 	EXPECT_EQ(testLightArmor->getDefense(), 5);
@@ -32,7 +32,7 @@ TEST(RangedArmorTest, getDefAtk) {
 TEST(RangedItemTest, Display_A) {
 	Ranger* test = new Ranger();
 
-	LightArmor* testLightArmor = test->AddLightArmor(5, "SuperlightArmor");
+	LightArmor* testLightArmor = test->AddArmor(5, "SuperlightArmor");
 
 	cout << "EXPECT: "<<"SuperlightArmor" << endl;
 	cout << "ACTUAL: ";
