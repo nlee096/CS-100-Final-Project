@@ -1,44 +1,45 @@
-#ifndef __LIGHTARMOR_TEST_HPP
-#define __LIGHTARMOR_TEST_HPP
-
+#ifndef __LIGHTARMOR_TESTS_HPP
+#define __LIGHTARMOR_TESTS_HPP
 #include "gtest/gtest.h"
 #include <stdexcept>
 #include <iostream>
 #include "LightArmor.hpp"
-
+#include "ranger.hpp"
 using namespace std;
 
 TEST(RangedArmorTest, StateItems) {
 	Ranger* test = new Ranger();
 
-	LightArmor* testArmor = test->AddLightArmor(5, "lightArmor");
+	LightArmor* testLightArmor = test->AddArmor(5, "lightArmor");
 
 
 	EXPECT_EQ(testLightArmor->getState(), false);
 	test->Favorite();
 	EXPECT_EQ(testLightArmor->getState(), true);
-	test->UnFavorite();
+	test->Unfavorite();
 	EXPECT_EQ(testLightArmor->getState(), false);
 }
 
-TEST(RangedArmorTest, getDef) {
+TEST(RangedArmorTest, getDefAtk) {
 	Ranger* test = new Ranger();
 
-	LightArmor* testArmor = test->AddLightArmor(5, "weightlessArmor");
+	LightArmor* testLightArmor = test->AddArmor(5, "weightlessArmor");
 
-	EXPECT_EQ(testWeapon->getAttack(), 0);
-	EXPECT_EQ(testWeapon->getDefense(), 25);
+	EXPECT_EQ(testLightArmor->getAttack(), 0);
+	EXPECT_EQ(testLightArmor->getDefense(), 5);
 }
 
 TEST(RangedItemTest, Display_A) {
 	Ranger* test = new Ranger();
 
-	LightArmor* testArmor = test->AddLightArmor(5, "lightArmor");
+	LightArmor* testLightArmor = test->AddArmor(5, "SuperlightArmor");
 
-	cout << "lightArmor" << endl;
-	testWeapon->Display();
-	testWeapon->Favorite();
-	cout << "** weightlessArmor **" << endl;
-	testWeapon->Display();
+	cout << "EXPECT: "<<"SuperlightArmor" << endl;
+	cout << "ACTUAL: ";
+	testLightArmor->Display();
+	testLightArmor->Favorite();
+	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "SuperlightArmor" << "\033[1;33m ** \033[0m" << endl;
+	cout << "ACTUAL: ";
+	testLightArmor->Display();
 }
-#endif //__LIGHTARMOR_TEST_HPP
+#endif //__LIGHTARMOR_TESTS_HPP
