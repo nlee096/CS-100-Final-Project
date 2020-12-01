@@ -8,11 +8,11 @@
 class Ranger : public UserClass{
 	public: 
 		Weapons* AddWeapon(int attack, string weaponName){
-			Weapons rangedWeapon = new Ranged(attack, weaponName);
+			Weapons* rangedWeapon = new Ranged(attack, weaponName);
 			return rangedWeapon;
 		}
 		Armors* AddArmor(int defense, string armorName){
-                        Armors lightArmor = new LightArmor(defense, armorName);
+                        Armors* lightArmor = new LightArmor(defense, armorName);
                         return lightArmor;
                 }
 }; 

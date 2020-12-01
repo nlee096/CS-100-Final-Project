@@ -8,11 +8,11 @@
 class Warrior : public UserClass{
 	public: 
 		Weapons* AddWeapon(int attack, string weaponName){
-			Weapons meleeWeapon = new Melee(attack, weaponName);
+			Weapons* meleeWeapon = new Melee(attack, weaponName);
 			return meleeWeapon;
 		}
 		Armors* AddArmor(int defense, string armorName){
-                        Armors heavyArmor = new HeavyArmor(defense, armorName);
+                        Armors* heavyArmor = new HeavyArmor(defense, armorName);
                         return heavyArmor;
                 }
 }; 
