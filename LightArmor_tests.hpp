@@ -1,5 +1,5 @@
-#ifndef __LIGHTARMOR_TEST_HPP
-#define __LIGHTARMOR_TEST_HPP
+#ifndef __LIGHTARMOR_TESTS_HPP
+#define __LIGHTARMOR_TESTS_HPP
 #include "gtest/gtest.h"
 #include <stdexcept>
 #include <iostream>
@@ -20,7 +20,7 @@ TEST(RangedArmorTest, StateItems) {
 	EXPECT_EQ(testLightArmor->getState(), false);
 }
 
-TEST(RangedArmorTest, getDef) {
+TEST(RangedArmorTest, getDefAtk) {
 	Ranger* test = new Ranger();
 
 	LightArmor* testLightArmor = test->AddLightArmor(5, "weightlessArmor");
@@ -34,12 +34,12 @@ TEST(RangedItemTest, Display_A) {
 
 	LightArmor* testLightArmor = test->AddLightArmor(5, "SuperlightArmor");
 
-	cout << "EXPECT"<<"SuperlightArmor" << endl;
-	cout << "ACTUAL";
+	cout << "EXPECT: "<<"SuperlightArmor" << endl;
+	cout << "ACTUAL: ";
 	testLightArmor->Display();
 	testLightArmor->Favorite();
 	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "SuperlightArmor" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testLightArmor->Display();
 }
-#endif //__LIGHTARMOR_TEST_HPP
+#endif //__LIGHTARMOR_TESTS_HPP
