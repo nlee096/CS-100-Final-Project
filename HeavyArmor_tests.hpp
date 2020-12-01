@@ -1,5 +1,5 @@
-fndef __HEAVYARMOR_TEST_HPP
-#define __HEAVYARMOR_TEST_HPP
+#ifndef __HEAVYARMOR_TESTS_HPP
+#define __HEAVYARMOR_TESTS_HPP
 
 #include "gtest/gtest.h"
 #include <stdexcept>
@@ -9,10 +9,10 @@ fndef __HEAVYARMOR_TEST_HPP
 
 using namespace std;
 
-TEST(RangedArmorTest, StateArmor) {
+TEST(WarriorArmorTest, StateArmor) {
 	Warrio* test = new Warrio();
 
-	HeavyArmor* testArmor = test->AddHeavyArmor(5, "HeavyArmor");
+	HeavyArmor* testHeavyArmor = test->AddHeavyArmor(5, "HeavyArmor");
 
 
 	EXPECT_EQ(testHeavyArmor->getState(), false);
@@ -22,24 +22,26 @@ TEST(RangedArmorTest, StateArmor) {
 	EXPECT_EQ(testHeavyArmor->getState(), false);
 }
 
-TEST(RangedArmorTest, getDefArmor) {
+TEST(WarriorArmorTest, getDefAtk) {
 	Warrio* test = new Warrio();
 
-	HeavyArmor* testArmor = test->AddHeavyArmor(5, "toughtArmor");
+	HeavyArmor* testHeavyArmor = test->AddHeavyArmor(5, "toughtArmor");
 
-	EXPECT_EQ(testWeapon->getAttack(), 0);
-	EXPECT_EQ(testWeapon->getDefense(), 50);
+	EXPECT_EQ(testHeavyArmor->getAttack(), 0);
+	EXPECT_EQ(testHeavyArmor->getDefense(), 5);
 }
 
-TEST(RangedItemTest, Display_A) {
+TEST(WarriorArmorTest, Display_A) {
 	Warrio* test = new Warrio();
 
-	HeavyArmor* testArmor = test->AddHeavyArmor(5, "HevenlyArmor");
+	HeavyArmor* testHeavyArmor = test->AddHeavyArmor(5, "HevenlyArmor");
 
-	cout << "HeavyArmor" << endl;
-	testWeapon->Display();
-	testWeapon->Favorite();
-	cout << "** toughtArmor **" << endl;
-	testWeapon->Display();
+	cout << "EXPECT:" << "HevenlyArmor" << endl;
+	cout << "ACTUAL:";
+	testHeavyArmor->Display();
+	testHeavyArmor->Favorite();
+	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "HevenlyArmor" << "\033[1;33m ** \033[0m" << endl;
+	cout << "ACTUAL: ";
+	testHeavyArmor->Display();
 }
-#endif //__HEAVYARMOR_TEST_HPP
+#endif //__HEAVYARMOR_TESTS_HPP
