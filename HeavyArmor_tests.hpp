@@ -10,7 +10,7 @@
 using namespace std;
 
 TEST(WarriorArmorTest, StateArmor) {
-	Warrior* test = new Warrio();
+	Warrior* test = new Warrior();
 
 	HeavyArmor* testHeavyArmor = test->AddArmor(5, "HeavyArmor");
 
@@ -23,7 +23,7 @@ TEST(WarriorArmorTest, StateArmor) {
 }
 
 TEST(WarriorArmorTest, getDefAtk) {
-	Warrior* test = new Warrio();
+	Warrior* test = new Warrior();
 
 	HeavyArmor* testHeavyArmor = test->AddArmor(5, "toughtArmor");
 
@@ -32,7 +32,7 @@ TEST(WarriorArmorTest, getDefAtk) {
 }
 
 TEST(WarriorArmorTest, Display_A) {
-	Warrior* test = new Warrio();
+	Warrior* test = new Warrior();
 
 	HeavyArmor* testHeavyArmor = test->AddArmor(5, "HevenlyArmor");
 
