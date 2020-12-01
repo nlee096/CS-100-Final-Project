@@ -6,12 +6,12 @@
 using namespace std;
 class State;
 class Weapons {
-    Private:
+    protected:
         int attack;
         int defense;
         string name;
         State* currentState;
-    Public:
+    public:
         Weapons() {};
         virtual void Favorite() = 0;
         virtual void Unfavorite() = 0;

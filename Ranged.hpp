@@ -4,7 +4,7 @@
 #include "Weapons.hpp"
 using namespace std;
 class Ranged : public Weapons {
-    Public:
+    public:
         Ranged(int atk, string name) {
             attack = atk;
             this->name = name;

@@ -14,9 +14,9 @@ TEST(RangedItemTest, StatePattern) {
 
 
 	EXPECT_EQ(testWeapon->getState(), false);
-	test->Favorite();
+	testWeapon->Favorite();
 	EXPECT_EQ(testWeapon->getState(), true);
-	test->Unfavorite();
+	testWeapon->Unfavorite();
 	EXPECT_EQ(testWeapon->getState(), false);
 }
 

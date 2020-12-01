@@ -4,7 +4,7 @@
 #include "Armors.hpp"
 using namespace std;
 class HeavyArmor : public Armors {
-Public:
+public:
 	HeavyArmor(int def, string name) {
 		defense = def;
 		attack = 0;

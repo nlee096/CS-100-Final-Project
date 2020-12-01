@@ -2,7 +2,7 @@
 #define __WARRIOR_HPP__
 
 #include "UserClass.hpp"
-#include "HeavyAmor.hpp"
+#include "HeavyArmor.hpp"
 #include "Melee.hpp"
 
 class Warrior : public UserClass{

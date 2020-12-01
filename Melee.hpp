@@ -4,7 +4,7 @@
 #include "Weapons.hpp"
 using namespace std;
 class Melee : public Weapons {
-	Public:
+	public:
         Melee(int atk, string name) {
             attack = atk;
             this->name = name;

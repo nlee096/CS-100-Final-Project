@@ -1,8 +1,8 @@
 #ifndef __USERCLASS_HPP__
 #define __USERCLASS_HPP__
 
-//#include "Weapons.hpp"
-//#include "Armors.hpp"
+#include "Weapons.hpp"
+#include "Armors.hpp"
 
 class UserClass {
 	public:
@@ -17,7 +17,7 @@ class UserClass {
 		
 		//functions
 		virtual Weapons* AddWeapon(int attack, string weponName) = 0;
-		virtual Armors* AddAmor(int defense, string armorName) =0;
+		virtual Armors* AddArmor(int defense, string armorName) =0;
 };
 
 #endif 	//__USERCLASS_HPP__

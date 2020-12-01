@@ -2,12 +2,15 @@
 #define __LIGHTARMOR_HPP__
 
 #include "Armors.hpp"
+#include "UnlockedState.hpp"
+#include "LockedState.hpp"
+
 using namespace std;
 class LightArmor : public Armors{
-    Public:
+    public:
     LightArmor(int def, string name) {
             defense = def;
-            Attack = 0;
+            attack = 0;
             this->name = name;
             currentState = new UnlockedState();
         }

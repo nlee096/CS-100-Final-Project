@@ -6,7 +6,7 @@
 #include "Ranged.hpp"
 
 class Ranger : public UserClass{
-	public: 
+	public:		
 		Weapons* AddWeapon(int attack, string weaponName){
 			Weapons* rangedWeapon = new Ranged(attack, weaponName);
 			return rangedWeapon;

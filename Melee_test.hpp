@@ -13,18 +13,18 @@ using namespace std;
 TEST(MeleeTestSet, Fav_UnFav_State_Test) {
 	Warrior* userClass = new Warrior();
 	Weapons* meleeWeapon = userClass -> AddWeapon(10, "Great Sword");
-	EXPECTS_TRUE(meleeWeapon -> getState() == false);
+	EXPECT_EQ(meleeWeapon -> getState(), false);
 	meleeWeapon -> Favorite();
-	EXPECTS_TRUE(meleeWeapon -> getState() == true);
+	EXPECT_EQ(meleeWeapon -> getState(), true);
 	meleeWeapon -> Unfavorite();
-	EXPECTS_TRUE(meleeWeapon -> getState() == false);
+	EXPECT_EQ(meleeWeapon -> getState(), false);
 }
 
 TEST(MeleeTestSet, GetFunctionsTest) {
 	Warrior* userClass = new Warrior();
 	Weapons* meleeWeapon = userClass -> AddWeapon(21, "Rusty Sword");
-	EXPECTS_EQ(meleeWeapon->getAttack(), 21);
-	EXPECTS_EQ(meleeWeapon->getDefense(), 0);
+	EXPECT_EQ(meleeWeapon->getAttack(), 21);
+	EXPECT_EQ(meleeWeapon->getDefense(), 0);
 }
 
 TEST(MeleeTestSet, DisplayTest) {
