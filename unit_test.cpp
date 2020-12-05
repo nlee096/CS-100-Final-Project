@@ -5,7 +5,8 @@
 //#include "HeavyArmor_tests.hpp"
 //#include "Ranged_tests.hpp"
 //#include "Melee_test.hpp"
-#include "Strategy_tests.hpp"
+//#include "Strategy_tests.hpp"
+#include "Concrete_Factory_tests.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
