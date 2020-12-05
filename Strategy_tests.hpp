@@ -4,7 +4,7 @@
 /*#include <iostream>*/
 #include <vector>
 
-#include "ItemOrder.hpp"
+//#include "ItemOrder.hpp"
 #include "HighestAttack.hpp"
 #include "HighestDefense.hpp"
 #include "UnlockedState.hpp"
@@ -110,7 +110,7 @@ TEST(ItemOrderSet, OneArmorLightArmor){
 	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
-TEST(ItemOrderSet, OneArmorLightArmor){
+TEST(ItemOrderSet, OneArmorHeavyArmor){
 	vector<Weapons*> attac;
 	vector<Armors*>	protec;	
 	protec.push_back(new HeavyArmor(10, "Juggernaut Chestplate"));
