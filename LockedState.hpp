@@ -8,7 +8,9 @@
 class LockedState : public State{
 	public:
 		void Display(std::string itemName){
+
 			std::cout << "\033[1;33m ** \033[0m" << itemName << "\033[1;33m ** \033[0m" << " "; 
+
 		}
 		bool getState(){
 			return true;

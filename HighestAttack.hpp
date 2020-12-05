@@ -9,6 +9,7 @@ class HighestAttack : public ItemOrder {
 	public:
 		void Display(vector<Weapons*> Weap, vector<Armors*> Arm) {
 			//Sort the weapons by highest attack
+
 			unsigned int j;
 			if(Weap.size() == 0) {
 				cout << endl << "Weapons: " << endl;
@@ -19,10 +20,12 @@ class HighestAttack : public ItemOrder {
  				       for(j = 0; j < Weap.size() - i - 1; j++) {
 						
            					 if(Weap.at(j)->getAttack() < Weap.at(j+1)->getAttack()) {
+
                						Weapons* temp = Weap.at(j);
                 					Weap.at(j) = Weap.at(j+1);
                 					Weap.at(j+1) = temp;
             				 	}	
+
 						}
         		}
 				
@@ -37,6 +40,7 @@ class HighestAttack : public ItemOrder {
 			for(unsigned int n = 0; n < Arm.size() ; n++) {
 				Arm.at(n)->Display();
 				cout << "\033[1;31m ATK \033[0m" << " : " << Arm.at(n)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << Arm.at(n)->getDefense() << " " << endl;
+
 			}
 			} 
 		}

@@ -8,7 +8,9 @@
 class UnlockedState : public State{
         public:
                 void Display(std::string itemName){
+
                         std::cout << itemName << " ";
+
                 }
                 bool getState(){
                         return false;
