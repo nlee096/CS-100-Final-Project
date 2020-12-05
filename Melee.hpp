@@ -2,10 +2,10 @@
 #define __MELEE_HPP__
 
 #include "Weapons.hpp"
-using namespace std;
+
 class Melee : public Weapons {
 	public:
-        Melee(int atk, string name) {
+        Melee(int atk, std::string name) {
             attack = atk;
             this->name = name;
             defense = 0;

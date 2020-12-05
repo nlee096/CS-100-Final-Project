@@ -2,6 +2,8 @@
 #define __ITEM_ORDER__
 
 #include <vector>
+#include "Weapons.hpp"
+#include "Armors.hpp"
 
 using namespace std;
 

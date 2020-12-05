@@ -3,12 +3,12 @@
 
 #include "State.hpp"
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 class UnlockedState : public State{
         public:
-                void Display(string itemName){
-                        cout << itemName << endl;
+                void Display(std::string itemName){
+                        std::cout << itemName << std::endl;
                 }
                 bool getState(){
                         return false;
