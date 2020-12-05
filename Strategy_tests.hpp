@@ -1,7 +1,7 @@
-#ifndef __ITEMORDER_TESTS_HPP__
+fndef __ITEMORDER_TESTS_HPP__
 #define __ITEMORDER_TESTS_HPP__
 #include "gtest/gtest.h"
-//#include <iostream>
+/*#include <iostream>*/
 #include <vector>
 
 #include "ItemOrder.hpp"
@@ -18,20 +18,21 @@
 #include "LightArmor.hpp"
 #include "HeavyArmor.hpp"
 
-//using namespace std;
+/*using namespace std;*/
 
 TEST(ItemOrderSet, NoItemBothStrats){
-	vector<Weapons*> attac;
-	vector<Armors*>	protec;	
-	ItemOrder* test1 = new HighestAttack();
-	std::cout << "EXPECTS : \nWeapons : \nArmors : " << std::endl;
-	std::cout << "ACTUAL : ";
-	test1 -> Display(attac, protec);
+    vector<Weapons*> attac;
+    vector<Armors*> protec;
+    ItemOrder* test1 = new HighestAttack();
+    std::cout << "EXPECTS : " << std::endl << "\nWeapons :" << std::endl << "\nArmors : " << std::endl;
+    std::cout << "ACTUAL : " << std::endl;
+    test1 -> Display(attac, protec);
 
-	ItemOrder* test2 = new HighestDefense();
-	std::cout << "EXPECTS : \nWeapons : \nArmors : " << std::endl;
-	std::cout << "ACTUAL : ";
-	test2 -> Display(attac, protec);
+    std::cout << std::endl;
+    ItemOrder* test2 = new HighestDefense();
+    std::cout << "EXPECTS : " << std::endl << "\nArmors : " << std::endl << "\nWeapons :" << std::endl;
+    std::cout << "ACTUAL : " << std::endl;
+    test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneWeaponMelee){
 	vector<Weapons*> attac;
@@ -46,14 +47,15 @@ TEST(ItemOrderSet, OneWeaponMelee){
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Armors : " << std::endl;
 
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : " << endl;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneWeaponRanged){
@@ -68,14 +70,18 @@ TEST(ItemOrderSet, OneWeaponRanged){
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : "<< std::endl;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "Auto Crossbow " 
+		 << "\033[1;31m ATK \033[0m" << " : 10 "
+		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneArmorLightArmor){
@@ -87,20 +93,24 @@ TEST(ItemOrderSet, OneArmorLightArmor){
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl; 
-	std::cout << "ACTUAL : ";
+	std::cout << "Thief Cloak "
+		 << "\033[1;31m ATK \033[0m" << " : 0 "
+		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Thief Cloak "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
-TEST(ItemOrderSet, OneArmorHeavyArmor){
+TEST(ItemOrderSet, OneArmorLightArmor){
 	vector<Weapons*> attac;
 	vector<Armors*>	protec;	
 	protec.push_back(new HeavyArmor(10, "Juggernaut Chestplate"));
@@ -108,18 +118,22 @@ TEST(ItemOrderSet, OneArmorHeavyArmor){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Armors : " << std::endl;	 
-	std::cout << "ACTUAL : ";
-	test1 -> Display(attac, protec);
-
-	ItemOrder* test2 = new HighestDefense();
-	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Juggernaut Chestplate "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : "<< std::endl;
+	test1 -> Display(attac, protec);
+
+	std::cout << std::endl;
+	ItemOrder* test2 = new HighestDefense();
+	std::cout << "EXPECTS :" << std::endl;
+	std::cout << "Armors : " << std::endl;
+	std::cout << "Juggernaut Chestplate "
+		 << "\033[1;31m ATK \033[0m" << " : 0 "
+		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "ACTUAL : "<< std::endl;
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, FourEachBothStrats){
@@ -166,25 +180,12 @@ TEST(ItemOrderSet, FourEachBothStrats){
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
 
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : " << std::endl;;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear " 
-		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Sling-shot " 
-		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
-		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;	
-
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
@@ -198,7 +199,22 @@ TEST(ItemOrderSet, FourEachBothStrats){
 	std::cout << "Thief Cloak " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "ACTUAL : ";
+
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "Steel Spear " 
+		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Sling-shot " 
+		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
+		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Auto Crossbow " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Stick " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;	
+	
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, SameStatsBothStrats){
@@ -243,11 +259,26 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : " << std::endl;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
+	std::cout << "Armors : " << std::endl;
+	std::cout << "Thief Cloak " 
+		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+	std::cout << "T-shirt " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+	std::cout << "Juggernaut Chestplate " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+	std::cout << "Plot-Armor " 
+		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
+		 	<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+
 	std::cout << "Weapons : " << std::endl;
 	std::cout << "Steel Spear " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
@@ -262,20 +293,8 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 		 	<< "\033[1;31m ATK \033[0m" << " : 10 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 		 	
-	std::cout << "Armors : " << std::endl;
-	std::cout << "Thief Cloak " 
-		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "T-shirt " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "Plot-Armor " 
-		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
-		 	<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : ";
+	
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, InOrderBothStrats){
@@ -321,25 +340,12 @@ TEST(ItemOrderSet, InOrderBothStrats){
 	std::cout << "Thief Cloak " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : " << std::endl;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
-	std::cout << "Sling-shot " 
-		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
-		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Steel Spear " 
-		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
@@ -353,10 +359,24 @@ TEST(ItemOrderSet, InOrderBothStrats){
 	std::cout << "Thief Cloak " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "ACTUAL : ";
+
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "Sling-shot " 
+		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
+		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Stick " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Auto Crossbow " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Steel Spear " 
+		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
-TEST(ItemOrderSet, ReverseOrderdBothStrats){
+TEST(ItemOrderSet, ReveseOrderBothStrats){
 	vector<Weapons*> attac;
 	vector<Armors*>	protec;	
 	attac.push_back(new Melee(10, "Steel Spear"));
@@ -398,25 +418,12 @@ TEST(ItemOrderSet, ReverseOrderdBothStrats){
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
-	std::cout << "ACTUAL : ";
+	std::cout << "ACTUAL : " << std::endl;
 	test1 -> Display(attac, protec);
 
+	std::cout << std::endl;
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear " 
-		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
-		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
-		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Sling-shot " 
-		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
-		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
@@ -430,7 +437,21 @@ TEST(ItemOrderSet, ReverseOrderdBothStrats){
 	std::cout << "Thief Cloak " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "ACTUAL : ";
+
+	std::cout << "Weapons : " << std::endl;
+	std::cout << "Steel Spear " 
+		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Auto Crossbow " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Stick " 
+		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
+		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "Sling-shot " 
+		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
+		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	test2 -> Display(attac, protec);
 }
 
