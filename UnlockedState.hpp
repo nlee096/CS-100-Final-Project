@@ -8,11 +8,12 @@
 class UnlockedState : public State{
         public:
                 void Display(std::string itemName){
-                        std::cout << itemName << std::endl;
+
+                        std::cout << itemName << " ";
+
                 }
                 bool getState(){
                         return false;
                 }
 };
 #endif //__UNLOCKEDSTATE_HPP
-
