@@ -5,10 +5,10 @@
 #include "UnlockedState.hpp"
 #include "LockedState.hpp"
 
-using namespace std;
+//using namespace std;
 class LightArmor : public Armors{
     public:
-    LightArmor(int def, string name) {
+    LightArmor(int def, std::string name) {
             defense = def;
             attack = 0;
             this->name = name;

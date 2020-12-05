@@ -2,10 +2,10 @@
 #define __RANGED_HPP__
 
 #include "Weapons.hpp"
-using namespace std;
+//using namespace std;
 class Ranged : public Weapons {
     public:
-        Ranged(int atk, string name) {
+        Ranged(int atk, std::string name) {
             attack = atk;
             this->name = name;
             defense = 0;
