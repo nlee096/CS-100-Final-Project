@@ -1,4 +1,4 @@
-fndef __ITEMORDER_TESTS_HPP__
+#ifndef __ITEMORDER_TESTS_HPP__
 #define __ITEMORDER_TESTS_HPP__
 #include "gtest/gtest.h"
 /*#include <iostream>*/
