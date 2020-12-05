@@ -13,10 +13,9 @@ class HighestDefense : public ItemOrder {
          
 	    unsigned int j;
 		if(Arm.size() == 0) {
-			cout << endl << "Armors: " << endl;
-			cout << "Weapons: " << endl;
+
 		}
-		else{	
+		else if(Arm.size() != 1){	
        		 for(unsigned int i = 0; i < Arm.size() - 1; i++) {
         		for(j = 0; j < Arm.size() - i - 1; j++) {
             			if(Arm.at(j)->getDefense() < Arm.at(j+1)->getDefense()) {
@@ -27,7 +26,7 @@ class HighestDefense : public ItemOrder {
             			}
         		}
 		} 
-	   
+	   }
 	/*Print out the armor*/
 
 			cout << endl << "Armors: " << endl;
@@ -43,7 +42,7 @@ class HighestDefense : public ItemOrder {
 
             }
 	}
-	}
+	
 
 };
 

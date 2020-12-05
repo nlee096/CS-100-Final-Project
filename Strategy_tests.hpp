@@ -24,14 +24,14 @@ TEST(ItemOrderSet, NoItemBothStrats){
     vector<Weapons*> attac;
     vector<Armors*> protec;
     ItemOrder* test1 = new HighestAttack();
-    std::cout << "EXPECTS : " << std::endl << "\nWeapons :" << std::endl << "\nArmors : " << std::endl;
-    std::cout << "ACTUAL : " << std::endl;
+    std::cout << "EXPECTS : "  << "\nWeapons :" << "\nArmors : " << std::endl;
+    std::cout << "ACTUAL : ";
     test1 -> Display(attac, protec);
 
     std::cout << std::endl;
     ItemOrder* test2 = new HighestDefense();
-    std::cout << "EXPECTS : " << std::endl << "\nArmors : " << std::endl << "\nWeapons :" << std::endl;
-    std::cout << "ACTUAL : " << std::endl;
+    std::cout << "EXPECTS : " << "\nArmors : " << "\nWeapons :" << std::endl;
+    std::cout << "ACTUAL : ";
     test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneWeaponMelee){
@@ -47,7 +47,7 @@ TEST(ItemOrderSet, OneWeaponMelee){
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Armors : " << std::endl;
 
-	std::cout << "ACTUAL : " << endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -55,7 +55,10 @@ TEST(ItemOrderSet, OneWeaponMelee){
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	     std::cout << "Steel Spear "
+		 << "\033[1;31m ATK \033[0m" << " : 10 "
+		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneWeaponRanged){
@@ -70,7 +73,7 @@ TEST(ItemOrderSet, OneWeaponRanged){
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "ACTUAL : "<< std::endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -81,7 +84,7 @@ TEST(ItemOrderSet, OneWeaponRanged){
 	std::cout << "Auto Crossbow " 
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneArmorLightArmor){
@@ -96,7 +99,7 @@ TEST(ItemOrderSet, OneArmorLightArmor){
 	std::cout << "Thief Cloak "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -107,7 +110,7 @@ TEST(ItemOrderSet, OneArmorLightArmor){
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, OneArmorHeavyArmor){
@@ -122,7 +125,7 @@ TEST(ItemOrderSet, OneArmorHeavyArmor){
 	std::cout << "Juggernaut Chestplate "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : "<< std::endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -133,7 +136,7 @@ TEST(ItemOrderSet, OneArmorHeavyArmor){
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "ACTUAL : "<< std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, FourEachBothStrats){
@@ -180,7 +183,7 @@ TEST(ItemOrderSet, FourEachBothStrats){
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
 
-	std::cout << "ACTUAL : " << std::endl;;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -214,7 +217,7 @@ TEST(ItemOrderSet, FourEachBothStrats){
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;	
 	
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, SameStatsBothStrats){
@@ -259,7 +262,7 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -294,7 +297,7 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 		 	
 	
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, InOrderBothStrats){
@@ -340,7 +343,7 @@ TEST(ItemOrderSet, InOrderBothStrats){
 	std::cout << "Thief Cloak " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -373,7 +376,7 @@ TEST(ItemOrderSet, InOrderBothStrats){
 	std::cout << "Steel Spear " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 TEST(ItemOrderSet, ReveseOrderBothStrats){
@@ -418,7 +421,7 @@ TEST(ItemOrderSet, ReveseOrderBothStrats){
 	std::cout << "Plot-Armor " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test1 -> Display(attac, protec);
 
 	std::cout << std::endl;
@@ -451,7 +454,7 @@ TEST(ItemOrderSet, ReveseOrderBothStrats){
 	std::cout << "Sling-shot " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "ACTUAL : " << std::endl;
+	std::cout << "ACTUAL : ";
 	test2 -> Display(attac, protec);
 }
 

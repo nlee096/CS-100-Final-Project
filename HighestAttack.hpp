@@ -12,10 +12,9 @@ class HighestAttack : public ItemOrder {
 
 			unsigned int j;
 			if(Weap.size() == 0) {
-				cout << endl << "Weapons: " << endl;
-				cout << "Armors: " << endl;
+
 			}
-			else {
+			else if(Weap.size() != 1) {
 				for(unsigned int i = 0; i < Weap.size() - 1; i++) {
  				       for(j = 0; j < Weap.size() - i - 1; j++) {
 						
@@ -28,7 +27,7 @@ class HighestAttack : public ItemOrder {
 
 						}
         		}
-				
+			}
 			//Print out the weapons
 			cout << endl << "Weapons: " << endl;
 			for(unsigned int k = 0; k < Weap.size() ; k++) {
@@ -42,7 +41,7 @@ class HighestAttack : public ItemOrder {
 				cout << "\033[1;31m ATK \033[0m" << " : " << Arm.at(n)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << Arm.at(n)->getDefense() << " " << endl;
 
 			}
-			} 
+			
 		}
 };
 
