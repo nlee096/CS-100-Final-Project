@@ -17,17 +17,17 @@ class HighestAttack : public ItemOrder {
                         min = j;
                     }
                 }
-                int temp = Arm.at[j];
+                Armors* temp = Arm.at[j];
                 Arm.at[j] = Arm.at[min];
                 Arm.at[min] = temp;
             }
             //Print out the armor
             for(unsigned int k = 0; k < Weap.size() - 1; k++) {
-                cout << Arm.at[k]->Display() << "\033[1;31m ATK \033[0m" << ": " << Arm.at[k]->getAttack() <<  "\033[1;32m DEF \033[0m" << ": " << Arm.at[k]->getDefense() << endl;
+                cout << Arm.at[k]->Display() << "\033[1;31m ATK \033[0m" << " : " << Arm.at[k]->getAttack() <<  "\033[1;32m DEF \033[0m" << " : " << Arm.at[k]->getDefense() << endl;
             }
             //Print out the weapon
             for(unsigned int n = 0; n < Arm.size() - 1; n++) {
-                cout << Weap.at[n]->Display() << "\033[1;31m ATK \033[0m" << ": " << Weap.at[n]->getAttack() << "\033[1;32m DEF \033[0m" << ": " << Weap.at[n]->getDefense() << endl;
+                cout << Weap.at[n]->Display() << "\033[1;31m ATK \033[0m" << " : " << Weap.at[n]->getAttack() << "\033[1;32m DEF \033[0m" << " : " << Weap.at[n]->getDefense() << endl;
             }
 
 };
