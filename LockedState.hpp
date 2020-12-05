@@ -3,12 +3,12 @@
 
 #include "State.hpp"
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 class LockedState : public State{
 	public:
-		void Display(string itemName){
-			cout << "\033[1;33m ** \033[0m" << itemName << "\033[1;33m ** \033[0m" << endl; 
+		void Display(std::string itemName){
+			std::cout << "\033[1;33m ** \033[0m" << itemName << "\033[1;33m ** \033[0m" << std::endl; 
 		}
 		bool getState(){
 			return true;

@@ -2,7 +2,6 @@
 #define __ARMORS_HPP__
 
 #include "State.hpp"
-
 using namespace std;
 class State;
 class Armors {
