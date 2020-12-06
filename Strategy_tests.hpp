@@ -4,7 +4,7 @@
 /*#include <iostream>*/
 #include <vector>
 
-//#include "ItemOrder.hpp"
+/*#include "ItemOrder.hpp"*/
 #include "HighestAttack.hpp"
 #include "HighestDefense.hpp"
 #include "UnlockedState.hpp"
@@ -239,10 +239,10 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 	std::cout << "Steel Spear " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Stick " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Auto Crossbow " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Sling-shot " 
@@ -286,10 +286,10 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 	std::cout << "Steel Spear " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Stick " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Auto Crossbow " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Sling-shot " 
