@@ -9,7 +9,7 @@ using namespace std;
 
 class ItemOrder {	
 	public:
-		virtual void Display(vector<Weapons*>, vector<Armors*>) = 0;
+		virtual void Display(const vector<Weapons*> &, const vector<Armors*> &) = 0;
 };
 
 #endif
