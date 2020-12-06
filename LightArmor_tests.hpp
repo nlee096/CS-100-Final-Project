@@ -38,9 +38,11 @@ TEST(RangedItemTest, Display_A) {
 	cout << "EXPECT: "<<"SuperlightArmor" << endl;
 	cout << "ACTUAL: ";
 	testLightArmor->Display();
+	cout << endl;
 	testLightArmor->Favorite();
 	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "SuperlightArmor" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testLightArmor->Display();
+	cout << endl;
 }
 #endif //__LIGHTARMOR_TESTS_HPP

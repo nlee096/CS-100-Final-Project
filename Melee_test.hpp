@@ -33,11 +33,13 @@ TEST(MeleeTestSet, DisplayTest) {
 	cout << "EXPECTS: " << "Excaliber" << endl;
 	cout << "ACTUAL: ";
 	meleeWeapon -> Display();
+	cout << endl;
 
 	meleeWeapon -> Favorite();
 	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "Excaliber" << "\033[1;33m ** \033[0m" << endl; 
 	cout << "ACTUAL: ";
 	meleeWeapon -> Display();
+	cout << endl;
 }
 
 #endif //__MELEE_TESTS_HPP__

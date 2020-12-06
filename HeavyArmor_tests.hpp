@@ -39,9 +39,11 @@ TEST(WarriorArmorTest, Display_A) {
 	cout << "EXPECT:" << "HevenlyArmor" << endl;
 	cout << "ACTUAL:";
 	testHeavyArmor->Display();
+	cout << endl;
 	testHeavyArmor->Favorite();
 	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "HevenlyArmor" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testHeavyArmor->Display();
+	cout << endl;
 }
 #endif //__HEAVYARMOR_TESTS_HPP

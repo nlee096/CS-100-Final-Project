@@ -37,11 +37,13 @@ TEST(RangedItemTest, Display) {
 	cout << "EXPECTS: " << "longBow" << endl;
 	cout << "ACTUAL: ";
 	testWeapon->Display();
+	cout << endl;
 
 	testWeapon->Favorite();
 	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "longBow" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testWeapon->Display();
+	cout << endl;
 }
 
 #endif

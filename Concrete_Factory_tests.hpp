@@ -41,9 +41,9 @@ TEST(ConcreteFactorySet, RangerAddWeapon){
 TEST(ConcreteFactorySet, RangerAddArmor){
 	UserClass* playerClass = new Ranger();
 	Armors* test = playerClass->AddArmor(10, "test armor");
-	std::cout << "EXPECTS : LighArmor" << std::endl;
+	std::cout << "EXPECTS : LightArmor" << std::endl;
 	std::cout << "ACTUAL : " << typeid(*test).name() << std::endl;
 }
 
-
 #endif
+
