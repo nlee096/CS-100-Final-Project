@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <map>
-#include <set>
 #include "UserClass.hpp"
 #include "Warrior.hpp"
 #include "Ranger.hpp"
@@ -21,8 +19,8 @@ int main() {
 	UserClass* setClass;
 	string myClass = "";
 		while (validInput == false) {
-			cout << "Enter user Class (Ranger = 1, Warrior = 2) : ";
-			cin >> userClass;
+			std::cout << "Enter user Class (Ranger = 1, Warrior = 2) : ";
+			std::cin >> userClass;
 			if (userClass == 1) {
 				myClass = "******* Ranger";
 				validInput = true;
@@ -34,7 +32,7 @@ int main() {
 				setClass = new Warrior();
 			}
 			else {
-				cout << "invalid class";
+				std::cout << "invalid class";
 				validInput = false;
 			}
 		}
@@ -44,58 +42,58 @@ int main() {
 	int stat;
 	Interface* controlPanel = new Interface();
 	while (opt != 7) {
-		cout << myClass << "Inventory Menu *******\n 1.Add an armor\n 2.Add a weapon\n 3.Remove an item\n 4.Favorite an item\n 5.Unfavorite an item\n 6.Display\n 7.Close Inventory\nEnter option to select operation:\n" << endl;
-		cin >> opt;
+		std::cout << myClass << "Inventory Menu *******\n 1.Add an armor\n 2.Add a weapon\n 3.Remove an item\n 4.Favorite an item\n 5.Unfavorite an item\n 6.Display\n 7.Close Inventory\nEnter option to select operation:\n" << endl;
+		std::cin >> opt;
 		switch (opt) { /* menu options*/
 		case 1:
 
-			cout << "Enter armor name :" << endl;
-			cin.ignore();
-			getline(cin, name);
-			cout << "Enter armor defense stat :" << endl;
-			cin >> stat;
+			std::cout << "Enter armor name :" << std::endl;
+			std::cin.ignore();
+			getline(std::cin, name);
+			std::cout << "Enter armor defense stat :" << std::endl;
+			std::cin >> stat;
 			setClass->AddArmor(stat, name);
 			break;
 
 		case 2:
-			cout << "Enter weapon name :" << endl;
-			cin.ignore();
-			getline(cin, name);
-			cout << "Enter weapon attack stat :" << endl;
-			cin >> stat;
+			std::cout << "Enter weapon name :" << std::endl;
+			std::cin.ignore();
+			getline(std::cin, name);
+			std::cout << "Enter weapon attack stat :" << std::endl;
+			std::cin >> stat;
 			setClass->AddWeapon(stat, name);
 			
 			break;
 
 		case 3:
 
-			cout << " Enter name of item to remove : " << endl;
-			cin.ignore();
-			getline(cin, name);
+			std::cout << " Enter name of item to remove : " << std::endl;
+			std::cin.ignore();
+			getline(std::cin, name);
 			controlPanel->remove(name);
 			break;
 
 		case 4:
 
-			cout << " Enter name of item to favorite :" << endl;
-			cin.ignore();
-			getline(cin, name);
+			std::cout << " Enter name of item to favorite :" << std::endl;
+			std::cin.ignore();
+			getline(std::cin, name);
 			controlPanel->Favorite(name);
 			break;
 
 		case 5:
-			cout << " Enter name of item to Unfavorite :" << endl;
-			cin.ignore();
-			getline(cin, name);
+			std::cout << " Enter name of item to Unfavorite :" << std::endl;
+			std::cin.ignore();
+			getline(std::cin, name);
 			controlPanel->Unfavorite(name);
 			break;
 
 		case 6:
 			bool canDo = false;
 			while (canDo == false) {
-				cout << " Display order :\n1. Highest -> lowest ATK \n2. Highest -> lowest DEF \n3.Back to Inventory Menu" << endl;
+				std::cout << " Display order :\n1. Highest -> lowest ATK \n2. Highest -> lowest DEF \n3.Back to Inventory Menu" << std::endl;
 				int displayOrder;
-				cin >> displayOrder;
+				std::cin >> displayOrder;
 				if (displayOrder == 1 || displayOrder == 2) {
 					controlPanel->Display(displayOrder);
 					canDo = true;
@@ -104,19 +102,19 @@ int main() {
 					canDo = true;
 				}
 				else {
-					cout << "invalid input" << endl;
+					std::cout << "invalid input" << std::endl;
 				}
 			}
 			break;
 
 		case 7:
-			cout << "Closing" << myClass << "Inventory Menu *******" << endl;
-			cout << "please rate 5 *" << endl;
+			std::cout << "Closing" << myClass << "Inventory Menu *******" << std::endl;
+			std::cout << "please rate 5 *" << std::endl;
 			/*return 0;*/
 			break;
 
 		default:
-			cout << "Invalid option" << endl;
+			std::cout << "Invalid option" << std::endl;
 		}
 
 	}
