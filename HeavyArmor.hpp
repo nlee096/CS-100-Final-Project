@@ -8,7 +8,7 @@ public:
 	HeavyArmor(int def, std::string name) {
 		defense = def;
 		attack = 0;
-		this->name = name;
+		this->name = name + " (HA)";
 		currentState = new UnlockedState();
 	}
 	void Favorite() {
@@ -40,6 +40,9 @@ public:
 	}
 	int getDefense() {
 		return this->defense;
+	}
+	std::string getName(){
+		return name;
 	}
 
 };

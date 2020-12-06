@@ -12,7 +12,6 @@ TEST(RangedItemTest, StatePattern) {
 
 	Weapons* testWeapon = test->AddWeapon(5, "shortBow");
 
-
 	EXPECT_EQ(testWeapon->getState(), false);
 	testWeapon->Favorite();
 	EXPECT_EQ(testWeapon->getState(), true);
@@ -29,18 +28,24 @@ TEST(RangedItemTest, Getters) {
 	EXPECT_EQ(testWeapon->getDefense(), 0);
 }
 
+TEST(RangedItemTest, getName) {
+    Ranger* test = new Ranger();
+    Weapons* testWeapon = test->AddWeapon(5, "bow");
+    EXPECT_EQ(testWeapon->getName(), "bow (RW)");
+}
+
 TEST(RangedItemTest, Display) {
 	Ranger* test = new Ranger();
 
 	Weapons* testWeapon = test->AddWeapon(15, "longBow");
 
-	cout << "EXPECTS: " << "longBow" << endl;
+	cout << "EXPECTS: " << "longBow (RW)" << endl;
 	cout << "ACTUAL: ";
 	testWeapon->Display();
 	cout << endl;
 
 	testWeapon->Favorite();
-	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "longBow" << "\033[1;33m ** \033[0m" << endl;
+	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "longBow (RW)" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testWeapon->Display();
 	cout << endl;

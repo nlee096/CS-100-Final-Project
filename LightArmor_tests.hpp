@@ -8,7 +8,7 @@
 #include "Ranger.hpp"
 using namespace std;
 
-TEST(RangedArmorTest, StateItems) {
+TEST(LightArmorTest, StateItems) {
 	Ranger* test = new Ranger();
 
 	Armors* testLightArmor = test->AddArmor(5, "lightArmor");
@@ -21,7 +21,7 @@ TEST(RangedArmorTest, StateItems) {
 	EXPECT_EQ(testLightArmor->getState(), false);
 }
 
-TEST(RangedArmorTest, getDefAtk) {
+TEST(LightArmorTest, getDefAtk) {
 	Ranger* test = new Ranger();
 
 	Armors* testLightArmor = test->AddArmor(5, "weightlessArmor");
@@ -30,17 +30,23 @@ TEST(RangedArmorTest, getDefAtk) {
 	EXPECT_EQ(testLightArmor->getDefense(), 5);
 }
 
-TEST(RangedItemTest, Display_A) {
+TEST(LightArmorTest, getName) {
+    Ranger* test = new Ranger();
+    Armors* testLightArmor = test->AddArmor(5, "Cloth Armor");
+    EXPECT_EQ(testLightArmor->getName(), "Cloth Armor (LA)");
+}
+
+TEST(LightArmorTest, Display_A) {
 	Ranger* test = new Ranger();
 
 	Armors* testLightArmor = test->AddArmor(5, "SuperlightArmor");
 
-	cout << "EXPECT: "<<"SuperlightArmor" << endl;
+	cout << "EXPECT: "<<"SuperlightArmor (LA)" << endl;
 	cout << "ACTUAL: ";
 	testLightArmor->Display();
 	cout << endl;
 	testLightArmor->Favorite();
-	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "SuperlightArmor" << "\033[1;33m ** \033[0m" << endl;
+	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "SuperlightArmor (LA)" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testLightArmor->Display();
 	cout << endl;

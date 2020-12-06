@@ -7,7 +7,7 @@ class Ranged : public Weapons {
     public:
         Ranged(int atk, std::string name) {
             attack = atk;
-            this->name = name;
+            this->name = name + " (RW)";
             defense = 0;
             currentState = new UnlockedState();
         }
@@ -40,6 +40,9 @@ class Ranged : public Weapons {
         }
         int getDefense() {
             return this->defense;
+        }
+	std::string getName(){
+                return name;
         }
  
  };

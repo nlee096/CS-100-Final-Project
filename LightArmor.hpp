@@ -11,7 +11,7 @@ class LightArmor : public Armors{
     LightArmor(int def, std::string name) {
             defense = def;
             attack = 0;
-            this->name = name;
+            this->name = name + " (LA)";
             currentState = new UnlockedState();
         }
         void Favorite() {
@@ -44,6 +44,9 @@ class LightArmor : public Armors{
         int getDefense() {
             return this->defense;
         }
+	std::string getName(){
+		return name;
+	}
 
 };
 

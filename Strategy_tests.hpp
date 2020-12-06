@@ -42,7 +42,7 @@ TEST(ItemOrderSet, OneWeaponMelee){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear "  
+	std::cout << "Steel Spear (MW) "  
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Armors : " << std::endl;
@@ -55,7 +55,7 @@ TEST(ItemOrderSet, OneWeaponMelee){
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	     std::cout << "Steel Spear "
+	     std::cout << "Steel Spear (MW) "
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -69,7 +69,7 @@ TEST(ItemOrderSet, OneWeaponRanged){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl; 
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "Armors : " << std::endl;
@@ -81,7 +81,7 @@ TEST(ItemOrderSet, OneWeaponRanged){
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -96,7 +96,7 @@ TEST(ItemOrderSet, OneArmorLightArmor){
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl; 
-	std::cout << "Thief Cloak "
+	std::cout << "Thief Cloak (LA) "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -106,7 +106,7 @@ TEST(ItemOrderSet, OneArmorLightArmor){
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Thief Cloak "
+	std::cout << "Thief Cloak (LA) "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "Weapons : " << std::endl;
@@ -122,7 +122,7 @@ TEST(ItemOrderSet, OneArmorHeavyArmor){
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Juggernaut Chestplate "
+	std::cout << "Juggernaut Chestplate (HA) "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -132,7 +132,7 @@ TEST(ItemOrderSet, OneArmorHeavyArmor){
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Juggernaut Chestplate "
+	std::cout << "Juggernaut Chestplate (HA) "
 		 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "Weapons : " << std::endl;
@@ -156,30 +156,30 @@ TEST(ItemOrderSet, FourEachBothStrats){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;	
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 16 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
 
@@ -190,30 +190,30 @@ TEST(ItemOrderSet, FourEachBothStrats){
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 16 " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
 
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;	
 	
@@ -236,30 +236,30 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 10 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -269,30 +269,30 @@ TEST(ItemOrderSet, SameStatsBothStrats){
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 10 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 		 	
@@ -317,30 +317,30 @@ TEST(ItemOrderSet, InOrderBothStrats){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 16 " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -350,30 +350,30 @@ TEST(ItemOrderSet, InOrderBothStrats){
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 16 " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
 
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -395,30 +395,30 @@ TEST(ItemOrderSet, ReveseOrderBothStrats){
 	ItemOrder* test1 = new HighestAttack();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 16 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
 	std::cout << "ACTUAL : ";
@@ -428,30 +428,30 @@ TEST(ItemOrderSet, ReveseOrderBothStrats){
 	ItemOrder* test2 = new HighestDefense();
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Armors : " << std::endl;
-	std::cout << "Plot-Armor " 
+	std::cout << "Plot-Armor (HA)" 
 		 	<< "\033[1;31m ATK \033[0m" << " : 0 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 102 " << std::endl;
-	std::cout << "T-shirt " 
+	std::cout << "T-shirt (LA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 52 " << std::endl;
-	std::cout << "Juggernaut Chestplate " 
+	std::cout << "Juggernaut Chestplate (HA) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 16 " << std::endl;
-	std::cout << "Thief Cloak " 
+	std::cout << "Thief Cloak (LA) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 0 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 12 " << std::endl;
 
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "Steel Spear " 
+	std::cout << "Steel Spear (MW) " 
 		  	 << "\033[1;31m ATK \033[0m" << " : 10 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Auto Crossbow " 
+	std::cout << "Auto Crossbow (RW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 15 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Stick " 
+	std::cout << "Stick (MW) " 
 		 	 << "\033[1;31m ATK \033[0m" << " : 50 "
 		 	 << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Sling-shot " 
+	std::cout << "Sling-shot (RW) " 
 		 	<< "\033[1;31m ATK \033[0m" << " : 100 "
 		 	<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "ACTUAL : ";

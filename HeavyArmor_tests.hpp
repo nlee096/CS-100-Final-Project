@@ -9,11 +9,10 @@
 
 using namespace std;
 
-TEST(WarriorArmorTest, StateArmor) {
+TEST(HeavyArmorTest, StateArmor) {
 	Warrior* test = new Warrior();
 
 	Armors* testHeavyArmor = test->AddArmor(5, "HeavyArmor");
-
 
 	EXPECT_EQ(testHeavyArmor->getState(), false);
 	testHeavyArmor->Favorite();
@@ -22,7 +21,7 @@ TEST(WarriorArmorTest, StateArmor) {
 	EXPECT_EQ(testHeavyArmor->getState(), false);
 }
 
-TEST(WarriorArmorTest, getDefAtk) {
+TEST(HeavyArmorTest, getDefAtk) {
 	Warrior* test = new Warrior();
 
 	Armors* testHeavyArmor = test->AddArmor(5, "toughtArmor");
@@ -31,17 +30,23 @@ TEST(WarriorArmorTest, getDefAtk) {
 	EXPECT_EQ(testHeavyArmor->getDefense(), 5);
 }
 
-TEST(WarriorArmorTest, Display_A) {
+TEST(HeavyArmorTest, getName) {
+    Warrior* test = new Warrior();
+    Armors* testHeavyArmor = test->AddArmor(5, "Metal Armor");
+    EXPECT_EQ(testHeavyArmor->getName(), "Metal Armor (HA)");
+}
+
+TEST(HeavyArmorTest, Display_A) {
 	Warrior* test = new Warrior();
 
 	Armors* testHeavyArmor = test->AddArmor(5, "HevenlyArmor");
 
-	cout << "EXPECT:" << "HevenlyArmor" << endl;
+	cout << "EXPECT:" << "HevenlyArmor (HA)" << endl;
 	cout << "ACTUAL:";
 	testHeavyArmor->Display();
 	cout << endl;
 	testHeavyArmor->Favorite();
-	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "HevenlyArmor" << "\033[1;33m ** \033[0m" << endl;
+	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "HevenlyArmor (HA)" << "\033[1;33m ** \033[0m" << endl;
 	cout << "ACTUAL: ";
 	testHeavyArmor->Display();
 	cout << endl;

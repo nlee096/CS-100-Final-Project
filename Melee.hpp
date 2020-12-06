@@ -7,7 +7,7 @@ class Melee : public Weapons {
 	public:
         Melee(int atk, std::string name) {
             attack = atk;
-            this->name = name;
+            this->name = name + " (MW)";
             defense = 0;
             currentState = new UnlockedState();
         }
@@ -41,7 +41,9 @@ class Melee : public Weapons {
         int getDefense() {
             return this->defense;
         }
-
+	std::string getName(){
+                return name;
+        }
 };
 
 

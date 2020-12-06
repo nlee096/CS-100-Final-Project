@@ -16,7 +16,7 @@ int main() {
 
 	int userClass;
 	bool validInput = false;
-	UserClass* setClass;
+	Interface* controlPanel;
 	std::string myClass = "";
 		while (validInput == false) {
 			std::cout << "Enter user Class (Ranger = 1, Warrior = 2) : ";
@@ -24,12 +24,12 @@ int main() {
 			if (userClass == 1) {
 				myClass = "******* Ranger";
 				validInput = true;
-				setClass = new Ranger();
+				controlPanel = new Interface(new Ranger());
 			}
 			else if (userClass == 2) {
 				myClass = "******* Warrior";
 				validInput = true;
-				setClass = new Warrior();
+				controlPanel = new Interface(new Warrior());
 			}
 			else {
 				std::cout << "invalid class";
@@ -40,7 +40,6 @@ int main() {
 	int opt = 0;
 	std::string name;
 	int stat;
-	Interface* controlPanel = new Interface();
 	while (opt != 7) {
 		std::cout << myClass << "Inventory Menu *******\n 1.Add an armor\n 2.Add a weapon\n 3.Remove an item\n 4.Favorite an item\n 5.Unfavorite an item\n 6.Display\n 7.Close Inventory\nEnter option to select operation:\n" << endl;
 		std::cin >> opt;

@@ -19,7 +19,7 @@ class Weapons {
         virtual bool getState() = 0;
         virtual int getAttack() = 0;
         virtual int getDefense() = 0;
-
+	virtual string getName() = 0;
 };
 
 #endif

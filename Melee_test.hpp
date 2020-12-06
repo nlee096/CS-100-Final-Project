@@ -27,16 +27,22 @@ TEST(MeleeTestSet, GetFunctionsTest) {
 	EXPECT_EQ(meleeWeapon->getDefense(), 0);
 }
 
+TEST(MeleeTestSet, getName) {
+    Warrior* userClass = new Warrior();
+    Weapons* meleeWeapon = userClass->AddWeapon(5, "sword");
+    EXPECT_EQ(meleeWeapon->getName(), "sword (MW)");
+}
+
 TEST(MeleeTestSet, DisplayTest) {
 	Warrior* userClass = new Warrior();
 	Weapons* meleeWeapon = userClass -> AddWeapon(99, "Excaliber");
-	cout << "EXPECTS: " << "Excaliber" << endl;
+	cout << "EXPECTS: " << "Excaliber (MW)" << endl;
 	cout << "ACTUAL: ";
 	meleeWeapon -> Display();
 	cout << endl;
 
 	meleeWeapon -> Favorite();
-	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "Excaliber" << "\033[1;33m ** \033[0m" << endl; 
+	cout << "EXPECTS: " << "\033[1;33m ** \033[0m" << "Excaliber (MW)" << "\033[1;33m ** \033[0m" << endl; 
 	cout << "ACTUAL: ";
 	meleeWeapon -> Display();
 	cout << endl;
