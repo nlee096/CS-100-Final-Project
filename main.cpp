@@ -14,117 +14,110 @@
 #include "Melee.hpp"
 #include "Ranged.hpp"
 
-int main(int argc, char** argv) {
+int main() {
 
 	int userClass;
-	cout << "Enter user Class(Ranger=1,Warrior=2)";
-	cin >> userClass;
-	if (userClass == 1)
-		cout << "Ranger";
-	else
-		cout << "Warrior";
-	int opt;
+	bool validInput = false;
+	UserClass* setClass;
+	string myClass = "";
+		while (validInput == false) {
+			cout << "Enter user Class (Ranger = 1, Warrior = 2) : ";
+			cin >> userClass;
+			if (userClass == 1) {
+				myClass = "******* Ranger";
+				validInput = true;
+				setClass = new Ranger();
+			}
+			else if (userClass == 2) {
+				myClass = "******* Warrior";
+				validInput = true;
+				setClass = new Warrior();
+			}
+			else {
+				cout << "invalid class";
+				validInput = false;
+			}
+		}
 
-	cout << "\n*****Inventory Menu*******\n 1.Add an armor\n 2.Add a weapon\n 3.Remove an item\n 4.Favorite an item\n 5.Unfavorite an item\n 6. Display\n 7.Close Inventory\n 8.Exit\nEnter option to select operation\n" << endl;
-
-	cin >> opt;
-	map<string, int> armor;
-	map<string, int> weapon;
-	map<int, string> w;
-	map<int, string> a;
-	set<string> fav;
-	string ar;
-	string stat;
-	for (;;)
-
-	{
-
-		switch (opt) //creating menu
-
-		{
-
+	int opt = 0;
+	string name;
+	int stat;
+	Interface* controlPanel = new Interface();
+	while (opt != 7) {
+		cout << myClass << "Inventory Menu *******\n 1.Add an armor\n 2.Add a weapon\n 3.Remove an item\n 4.Favorite an item\n 5.Unfavorite an item\n 6.Display\n 7.Close Inventory\nEnter option to select operation:\n" << endl;
+		cin >> opt;
+		switch (opt) { /* menu options*/
 		case 1:
 
-			cout << "Enter armor name : (user inputs string that may include spaces, followed by enter)" << endl;
-			cin >> ar;
-			cout << "Enter armor defense stat : (user enters int followed by enter)" << endl;
+			cout << "Enter armor name :" << endl;
+			cin.ignore();
+			getline(cin, name);
+			cout << "Enter armor defense stat :" << endl;
 			cin >> stat;
-			cout << ar << " DEF : " << stat << " has been stored in your inventory!" << endl;
-			armor[ar] = stat;
-			a[stat] = ar;
+			setClass->AddArmor(stat, name);
 			break;
 
 		case 2:
-
-			cout << "Enter weapon name : (user inputs string that may include spaces, followed by enter)" << endl;
-			cin >> ar;
-			cout << "Enter weapon attack stat : (user enters int followed by enter)" << endl;
+			cout << "Enter weapon name :" << endl;
+			cin.ignore();
+			getline(cin, name);
+			cout << "Enter weapon attack stat :" << endl;
 			cin >> stat;
-			cout << ar << " ATK : " << stat << " has been stored in your inventory!" << endl;
-			weapon[ar] = stat;
-			w[stat] = ar;
+			setClass->AddWeapon(stat, name);
+			
 			break;
 
 		case 3:
 
-			cout << " Enter name of item to remove : (user inputs string that may include spaces, followed by enter)\n" << endl;
-			cin >> ar;
-			if (armor.find(ar) != armor.end()) {
-				cout << ar << " DEF :" << armor[ar] << "has been removed from your inventory!\n";
-				armor.erase(ar);
-
-			}
-			else if (weapon.find(ar) != weapon.end()) {
-				cout << ar << " ATK :" << weapon[ar] << "has been removed from your inventory!\n";
-				weapon.erase(ar);
-			}
+			cout << " Enter name of item to remove : " << endl;
+			cin.ignore();
+			getline(cin, name);
+			controlPanel->remove(name);
 			break;
 
 		case 4:
 
-			cout << " Enter name of item to favorite : (user inputs string that may include spaces, followed by enter)\n" << endl;
-			cin >> ar;
-			fav.insert(ar);
+			cout << " Enter name of item to favorite :" << endl;
+			cin.ignore();
+			getline(cin, name);
+			controlPanel->Favorite(name);
 			break;
 
 		case 5:
-
-			cout << " Enter name of item to unfavorite : (user inputs string that may include spaces, followed by enter)\n" << endl;
-			cin >> ar;
-			if (fav.find(ar) != fav.end())
-				fav.earse(ar);
+			cout << " Enter name of item to Unfavorite :" << endl;
+			cin.ignore();
+			getline(cin, name);
+			controlPanel->Unfavorite(name);
 			break;
 
 		case 6:
-
-			cout << " Display order :\n1. Highest -> lowest ATK\n2. Highest -> lowest DEF\n3. Weapons only\n4. Armors only\n5. Weapons and Armors\n" << endl;
-			for (auto it = w.begin(); it != w.end(); it++)
-				cout << *it << " ";
-			cout << endl;
-			for (auto it = a.begin(); it != a.end(); it++)
-				cout << *it << " ";
-			cout << endl;
+			bool canDo = false;
+			while (canDo == false) {
+				cout << " Display order :\n1. Highest -> lowest ATK \n2. Highest -> lowest DEF \n3.Back to Inventory Menu" << endl;
+				int displayOrder;
+				cin >> displayOrder;
+				if (displayOrder == 1 || displayOrder == 2) {
+					controlPanel->Display(displayOrder);
+					canDo = true;
+				}
+				else if (displayOrder == 3) {
+					canDo = true;
+				}
+				else {
+					cout << "invalid input" << endl;
+				}
+			}
 			break;
 
 		case 7:
-
-			cout << " Back to Inventory Menu\n" << endl;
-
-			cout << " Closing (user class) Inventory \n" << endl;
-
+			cout << "Closing" << myClass << "Inventory Menu *******" << endl;
+			cout << "please rate 5 *" << endl;
+			/*return 0;*/
 			break;
 
-		case 8:
-
-			cout << "End of program" << endl;
-
-			return -1;
-
+		default:
+			cout << "Invalid option" << endl;
 		}
-
-		cout << "\n*****Inventory Menu*******\n 1.Add an armor\n 2.Add a weapon\n 3.Remove an item\n 4.Favorite an item\n 5.Unfavorite an item\n 6. Display\n 7.Close Inventory\n 8.Exit\nEnter option to select operation\n" << endl;
-
-		cin >> opt;
 
 	}
 
