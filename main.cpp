@@ -17,7 +17,7 @@ int main() {
 	int userClass;
 	bool validInput = false;
 	UserClass* setClass;
-	string myClass = "";
+	std::string myClass = "";
 		while (validInput == false) {
 			std::cout << "Enter user Class (Ranger = 1, Warrior = 2) : ";
 			std::cin >> userClass;
@@ -38,7 +38,7 @@ int main() {
 		}
 
 	int opt = 0;
-	string name;
+	std::string name;
 	int stat;
 	Interface* controlPanel = new Interface();
 	while (opt != 7) {
@@ -49,7 +49,7 @@ int main() {
 
 			std::cout << "Enter armor name :" << std::endl;
 			std::cin.ignore();
-			getline(std::cin, name);
+			std::getline(std::cin, name);
 			std::cout << "Enter armor defense stat :" << std::endl;
 			std::cin >> stat;
 			setClass->AddArmor(stat, name);
@@ -58,7 +58,7 @@ int main() {
 		case 2:
 			std::cout << "Enter weapon name :" << std::endl;
 			std::cin.ignore();
-			getline(std::cin, name);
+			std::getline(std::cin, name);
 			std::cout << "Enter weapon attack stat :" << std::endl;
 			std::cin >> stat;
 			setClass->AddWeapon(stat, name);
@@ -69,7 +69,7 @@ int main() {
 
 			std::cout << " Enter name of item to remove : " << std::endl;
 			std::cin.ignore();
-			getline(std::cin, name);
+			std::getline(std::cin, name);
 			controlPanel->remove(name);
 			break;
 
@@ -77,14 +77,14 @@ int main() {
 
 			std::cout << " Enter name of item to favorite :" << std::endl;
 			std::cin.ignore();
-			getline(std::cin, name);
+			std::getline(std::cin, name);
 			controlPanel->Favorite(name);
 			break;
 
 		case 5:
 			std::cout << " Enter name of item to Unfavorite :" << std::endl;
 			std::cin.ignore();
-			getline(std::cin, name);
+			std::getline(std::cin, name);
 			controlPanel->Unfavorite(name);
 			break;
 
