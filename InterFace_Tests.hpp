@@ -157,6 +157,7 @@ TEST(InterfaceTesting, FavTest) {
 	std::cout << "Favorited " << "\033[1;33m ** \033[0m" << "DesertArmor (RW)" << "\033[1;33m ** \033[0m" << " ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;
 	std::cout << "Item does not exist in your inventory" << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	playerClass->Favorite("Staff");
 	playerClass->Favorite("Staff");
 	playerClass->Favorite("DesertArmor");
@@ -187,6 +188,7 @@ TEST(InterfaceTesting, UnfavTest) {
 	std::cout << "Unfavorited DesertArmor (RW) ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;
 	std::cout << "Item does not exist in your inventory" << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	playerClass->Unfavorite("bow");
 	playerClass->Unfavorite("Staff");
 	playerClass->Unfavorite("DesertArmor");
@@ -209,7 +211,6 @@ TEST(InterfaceTesting, HighestAttackDisplayRanger) {
 	playerClass->weapons.at(1)->Favorite();
 	playerClass->armors.at(2)->Favorite();
 
-	playerClass->Display(1);
 
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
@@ -225,15 +226,17 @@ TEST(InterfaceTesting, HighestAttackDisplayRanger) {
 
 	std::cout << "Armors : " << std::endl;
 	std::cout << "\033[1;33m ** \033[0m" << "DesertArmor (RW) " << "\033[1;33m ** \033[0m" << " "
-		<< "\033[1;31m ATK \033[0m" << " : 50 "
-		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+		<< "\033[1;31m ATK \033[0m" << " : 0 "
+		<< "\033[1;32m DEF \033[0m" << " : 50 " << std::endl;
 	std::cout << "RangerArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
 		<< "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
 	std::cout << "MagicArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
 		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-
+	std::cout << "ACTUAL : "<< std::endl;
+		playerClass->Display(1);
+	
 }
 
 TEST(InterfaceTesting, HighestDefenseDisplayRanger) {
@@ -251,7 +254,6 @@ TEST(InterfaceTesting, HighestDefenseDisplayRanger) {
 	playerClass->weapons.at(1)->Favorite();
 	playerClass->armors.at(2)->Favorite();
 
-	playerClass->Display(2);
 
 	std::cout << "EXPECTS : " << std::endl;
 	std::cout << "Armors : " << std::endl;
@@ -276,6 +278,8 @@ TEST(InterfaceTesting, HighestDefenseDisplayRanger) {
 		<< "\033[1;31m ATK \033[0m" << " : 50 "
 		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
+	std::cout << "ACTUAL : "<< std::endl;
+		playerClass->Display(2);
 
 }
 #endif
