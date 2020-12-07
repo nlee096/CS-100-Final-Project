@@ -9,11 +9,13 @@
 #include "Armors.hpp"
 #include "Weapons.hpp"
 #include "ItemOrder.hpp"
+
 /*
  * changes:
  * UserClass becamse UserClass* 
  * constructor with UserClass* arguement
  * */
+
 class Interface{
 	private:
 		UserClass* playerClass;
@@ -64,7 +66,7 @@ class Interface{
 				for(unsigned int w = 0; w < weapons.size() && existsW == false; w++){
 					currName = weapons.at(w)->getName();
 					if(currName.substr(0, currName.size()-6) == name){
-						std::cout << "Item name conflicts with a weapon in your inventory" << std:: endl;
+						std::cout << "Item already exists in your inventory" << std:: endl;
 						existsW = true;
 					}
 				}
@@ -93,7 +95,7 @@ class Interface{
 				for(unsigned int a = 0; a < armors.size() && existsA == false; a++){
 					currName = armors.at(a)->getName();
 					if(currName.substr(0, currName.size()-6) == name){
-						std::cout << "Item name conflicts with an armor in your inventory" << std:: endl;
+						std::cout << "Item already exists in your inventory" << std:: endl;
 						existsA = true;
 					}
 				}
@@ -115,7 +117,7 @@ class Interface{
 					currName = weapons.at(r)->getName();
 					if(currName.substr(0, currName.size()-6) == name){
 						if(weapons.at(r)->getState() == true){
-							std::cout << "item is favorited. Unfavorite to remove."
+							std::cout << "item is favorited. Unfavorite to remove.";
 						}
 						else{
 							std::cout << "Removed ";
@@ -130,7 +132,7 @@ class Interface{
 					currName = armors.at(r2)->getName();
 					if(currName.substr(0, currName.size()-6) == name){
 						if(armors.at(r2)->getState() == true){
-							std::cout << "item is favorited. Unfavorite to remove."
+							std::cout << "item is favorited. Unfavorite to remove.";
 						}
 						else{
 							std::cout << "Removed ";
@@ -206,7 +208,7 @@ class Interface{
 							existsF = true;
 						}
 						else{
-							std::cout << "Item is already favorited." << std::endl;
+							std::cout << "Item is already unfavorited." << std::endl;
 						}
 					}
 				}
