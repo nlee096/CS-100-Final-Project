@@ -234,7 +234,7 @@ TEST(InterfaceTesting, HighestAttackDisplayRanger) {
 	std::cout << "MagicArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
 		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "ACTUAL : "<< std::endl;
+	std::cout << "ACTUAL : "<<;
 		playerClass->Display(1);
 	
 }
@@ -258,8 +258,8 @@ TEST(InterfaceTesting, HighestDefenseDisplayRanger) {
 	std::cout << "EXPECTS : " << std::endl;
 	std::cout << "Armors : " << std::endl;
 	std::cout << "\033[1;33m ** \033[0m" << "DesertArmor (RW) " << "\033[1;33m ** \033[0m" << " "
-		<< "\033[1;31m ATK \033[0m" << " : 50 "
-		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+		<< "\033[1;31m ATK \033[0m" << " : 0 "
+		<< "\033[1;32m DEF \033[0m" << " : 50 " << std::endl;
 	std::cout << "MagicArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
 		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
@@ -278,7 +278,7 @@ TEST(InterfaceTesting, HighestDefenseDisplayRanger) {
 		<< "\033[1;31m ATK \033[0m" << " : 50 "
 		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
-	std::cout << "ACTUAL : "<< std::endl;
+	std::cout << "ACTUAL : "<<;
 		playerClass->Display(2);
 
 }
