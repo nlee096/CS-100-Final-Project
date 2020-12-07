@@ -22,7 +22,7 @@ class Interface{
 	public:
 		vector<Weapons*> weapons;
 		vector<Armors*> armors;
-		ItemOrder* organizer
+		ItemOrder* organizer;
 
 		Interface(UserClass* myclass){
 			playerClass = myclass;
@@ -35,7 +35,7 @@ class Interface{
 			}
 			weapons.clear();
 			for(unsigned int j = 0; j < armors.size(); j++){
-				delete armors.at(i);
+				delete armors.at(j);
 				/*delete weapons[i];*/
 			}
 			armors.clear();
@@ -123,7 +123,7 @@ class Interface{
 							std::cout << "Removed ";
 							weapons.at(r)->Display();
 							std::cout << "\033[1;31m ATK \033[0m" << " : " << weapons.at(r)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << weapons.at(r)->getDefense() << " " << endl;
-							weapons.erase(weapons.begin(), + r);
+							weapons.erase(weapons.begin() + r);
 							existsR = true;
 						}
 					}
@@ -136,9 +136,9 @@ class Interface{
 						}
 						else{
 							std::cout << "Removed ";
-							armors.at(r)->Display();
+							armors.at(r2)->Display();
 							std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(r2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(r2)->getDefense() << " " << endl;
-							armors.erase(armors.begin(), + r2);
+							armors.erase(armors.begin() + r2);
 							existsR = true;
 						}
 					}
@@ -205,14 +205,14 @@ class Interface{
 							std::cout << "Unfavorited ";
 							weapons.at(u)->Display();
 							std::cout << "\033[1;31m ATK \033[0m" << " : " << weapons.at(u)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << weapons.at(u)->getDefense() << " " << endl;
-							existsF = true;
+							existsU = true;
 						}
 						else{
 							std::cout << "Item is already unfavorited." << std::endl;
 						}
 					}
 				}
-				for(unsigned int u2 = 0; u2 < armors.size() && existsF == false; u2++){
+				for(unsigned int u2 = 0; u2 < armors.size() && existsU == false; u2++){
 					currName = armors.at(u2)->getName();
 					if(currName.substr(0, currName.size()-6) == name){
 						if(armors.at(u2)->getState() != true){
@@ -220,14 +220,14 @@ class Interface{
 							std::cout << "Unfavorited ";
 							armors.at(u2)->Display();
 							std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(u2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(u2)->getDefense() << " " << endl;
-							existsF = true;
+							existsU = true;
 						}
 						else{
 							std::cout << "Item is already unfavorited." << std::endl;
 						}
 					}
 				}
-				if(existsF == false){
+				if(existsU == false){
 					std::cout << "Item does not exist in your inventory" << std::endl;
 				}
 			}
