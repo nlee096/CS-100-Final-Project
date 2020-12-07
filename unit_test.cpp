@@ -9,6 +9,7 @@
 #include "State_tests.hpp"
 #include "Concrete_Factory_tests.hpp"
 #include "ItemOrder_Favorited_test.hpp"
+#include "Interface_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

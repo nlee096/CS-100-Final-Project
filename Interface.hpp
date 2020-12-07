@@ -22,7 +22,7 @@ class Interface{
 	public:
 		vector<Weapons*> weapons;
 		vector<Armors*> armors;
-		ItemOrder* organizer
+		ItemOrder* organizer;
 
 		Interface(UserClass* myclass){
 			playerClass = myclass;
@@ -62,7 +62,7 @@ class Interface{
 						existsA = true;
 					}
 				}
-				if(existA == false){
+				if(existsA == false){
 					for(unsigned int w = 0; w < weapons.size() && existsW == false; w++){
 						currName = weapons.at(w)->getName();
 						if(currName.substr(0, currName.size()-5) == name){
@@ -93,7 +93,7 @@ class Interface{
 						existsW = true;
 					}
 				}
-				if(existW == false){
+				if(existsW == false){
 					for(unsigned int a = 0; a < armors.size() && existsA == false; a++){
 						currName = armors.at(a)->getName();
 						if(currName.substr(0, currName.size()-5) == name){
@@ -120,7 +120,8 @@ class Interface{
 					currName = weapons.at(r)->getName();
 					if(currName.substr(0, currName.size()-5) == name){
 						if(weapons.at(r)->getState() == true){
-							std::cout << "item is favorited. Unfavorite to remove.";
+							std::cout << "item is favorited. Unfavorite to remove." << std::endl;
+							existsR = true;
 						}
 						else{
 							std::cout << "Removed ";
@@ -136,7 +137,8 @@ class Interface{
 						currName = armors.at(r2)->getName();
 						if(currName.substr(0, currName.size()-5) == name){
 							if(armors.at(r2)->getState() == true){
-								std::cout << "item is favorited. Unfavorite to remove.";
+								std::cout << "item is favorited. Unfavorite to remove." << std::endl;
+								existsR = true;
 							}
 							else{
 								std::cout << "Removed ";
@@ -172,6 +174,7 @@ class Interface{
 						}
 						else{
 							std::cout << "Item is already favorited." << std::endl;
+							existsF = true;
 						}
 					}
 				}
@@ -188,6 +191,7 @@ class Interface{
 							}
 							else{
 								std::cout << "Item is already favorited." << std::endl;
+								existsF = true;
 							}
 						}
 					}
@@ -216,6 +220,7 @@ class Interface{
 						}
 						else{
 							std::cout << "Item is already unfavorited." << std::endl;
+							existsU = true;
 						}
 					}
 				}
@@ -232,6 +237,7 @@ class Interface{
 							}
 							else{
 								std::cout << "Item is already unfavorited." << std::endl;
+								existsU = true;
 							}
 						}
 					}
