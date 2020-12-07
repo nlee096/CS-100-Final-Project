@@ -60,6 +60,7 @@ class Interface{
 						existsA = true;
 					}
 				}
+				/*should exit out if existA is true*/
 				for(unsigned int w = 0; w < weapons.size() && existsW == false; w++){
 					currName = weapons.at(w)->getName();
 					if(currName.substr(0, currName.size()-6) == name){
@@ -230,7 +231,7 @@ class Interface{
 			}
 		}
 		void Display(int order){
-			if(order != 1 || order != 2){
+			if(order != 1 && order != 2){
 				std::cout << "Invalid input" << std::endl;
 			}
 			else{
