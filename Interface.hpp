@@ -62,12 +62,13 @@ class Interface{
 						existsA = true;
 					}
 				}
-				/*should exit out if existA is true*/
-				for(unsigned int w = 0; w < weapons.size() && existsW == false; w++){
-					currName = weapons.at(w)->getName();
-					if(currName.substr(0, currName.size()-5) == name){
-						std::cout << "Item already exists in your inventory" << std:: endl;
-						existsW = true;
+				if(existsA == false){
+					for(unsigned int w = 0; w < weapons.size() && existsW == false; w++){
+						currName = weapons.at(w)->getName();
+						if(currName.substr(0, currName.size()-5) == name){
+							std::cout << "Item already exists in your inventory" << std:: endl;
+							existsW = true;
+						}
 					}
 				}
 				if(existsA == false && existsW == false){
@@ -92,11 +93,13 @@ class Interface{
 						existsW = true;
 					}
 				}
-				for(unsigned int a = 0; a < armors.size() && existsA == false; a++){
-					currName = armors.at(a)->getName();
-					if(currName.substr(0, currName.size()-5) == name){
-						std::cout << "Item already exists in your inventory" << std:: endl;
-						existsA = true;
+				if(existsW == false){
+					for(unsigned int a = 0; a < armors.size() && existsA == false; a++){
+						currName = armors.at(a)->getName();
+						if(currName.substr(0, currName.size()-5) == name){
+							std::cout << "Item already exists in your inventory" << std:: endl;
+							existsA = true;
+						}
 					}
 				}
 				if(existsA == false && existsW == false){
@@ -117,7 +120,8 @@ class Interface{
 					currName = weapons.at(r)->getName();
 					if(currName.substr(0, currName.size()-5) == name){
 						if(weapons.at(r)->getState() == true){
-							std::cout << "item is favorited. Unfavorite to remove.";
+							std::cout << "item is favorited. Unfavorite to remove." << std::endl;
+							existsR = true;
 						}
 						else{
 							std::cout << "Removed ";
@@ -128,18 +132,21 @@ class Interface{
 						}
 					}
 				}
-				for(unsigned int r2 = 0; r2 < armors.size() && existsR == false; r2++){
-					currName = armors.at(r2)->getName();
-					if(currName.substr(0, currName.size()-5) == name){
-						if(armors.at(r2)->getState() == true){
-							std::cout << "item is favorited. Unfavorite to remove.";
-						}
-						else{
-							std::cout << "Removed ";
-							armors.at(r2)->Display();
-							std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(r2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(r2)->getDefense() << " " << endl;
-							armors.erase(armors.begin() + r2);
-							existsR = true;
+				if(existsR == false){
+					for(unsigned int r2 = 0; r2 < armors.size() && existsR == false; r2++){
+						currName = armors.at(r2)->getName();
+						if(currName.substr(0, currName.size()-5) == name){
+							if(armors.at(r2)->getState() == true){
+								std::cout << "item is favorited. Unfavorite to remove." << std::endl;
+								existsR = true;
+							}
+							else{
+								std::cout << "Removed ";
+								armors.at(r2)->Display();
+								std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(r2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(r2)->getDefense() << " " << endl;
+								armors.erase(armors.begin() + r2);
+								existsR = true;
+							}
 						}
 					}
 				}
@@ -167,21 +174,25 @@ class Interface{
 						}
 						else{
 							std::cout << "Item is already favorited." << std::endl;
+							existsF = true;
 						}
 					}
 				}
-				for(unsigned int f2 = 0; f2 < armors.size() && existsF == false; f2++){
-					currName = armors.at(f2)->getName();
-					if(currName.substr(0, currName.size()-5) == name){
-						if(armors.at(f2)->getState() != true){
-							armors.at(f2)->Favorite();
-							std::cout << "Favorited ";
-							armors.at(f2)->Display();
-							std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(f2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(f2)->getDefense() << " " << endl;
-							existsF = true;
-						}
-						else{
-							std::cout << "Item is already favorited." << std::endl;
+				if(existsF == false){
+					for(unsigned int f2 = 0; f2 < armors.size() && existsF == false; f2++){
+						currName = armors.at(f2)->getName();
+						if(currName.substr(0, currName.size()-5) == name){
+							if(armors.at(f2)->getState() != true){
+								armors.at(f2)->Favorite();
+								std::cout << "Favorited ";
+								armors.at(f2)->Display();
+								std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(f2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(f2)->getDefense() << " " << endl;
+								existsF = true;
+							}
+							else{
+								std::cout << "Item is already favorited." << std::endl;
+								existsF = true;
+							}
 						}
 					}
 				}
@@ -209,21 +220,25 @@ class Interface{
 						}
 						else{
 							std::cout << "Item is already unfavorited." << std::endl;
+							existsU = true;
 						}
 					}
 				}
-				for(unsigned int u2 = 0; u2 < armors.size() && existsU == false; u2++){
-					currName = armors.at(u2)->getName();
-					if(currName.substr(0, currName.size()-5) == name){
-						if(armors.at(u2)->getState() != true){
-							armors.at(u2)->Unfavorite();
-							std::cout << "Unfavorited ";
-							armors.at(u2)->Display();
-							std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(u2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(u2)->getDefense() << " " << endl;
-							existsU = true;
-						}
-						else{
-							std::cout << "Item is already unfavorited." << std::endl;
+				if(existsU == false){
+					for(unsigned int u2 = 0; u2 < armors.size() && existsU == false; u2++){
+						currName = armors.at(u2)->getName();
+						if(currName.substr(0, currName.size()-5) == name){
+							if(armors.at(u2)->getState() == true){
+								armors.at(u2)->Unfavorite();
+								std::cout << "Unfavorited ";
+								armors.at(u2)->Display();
+								std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(u2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(u2)->getDefense() << " " << endl;
+								existsU = true;
+							}
+							else{
+								std::cout << "Item is already unfavorited." << std::endl;
+								existsU = true;
+							}
 						}
 					}
 				}
