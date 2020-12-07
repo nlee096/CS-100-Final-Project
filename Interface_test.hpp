@@ -157,6 +157,7 @@ TEST(InterfaceTesting, FavoriteTest) {
 	std::cout << "Favorited " << "\033[1;33m ** \033[0m" << "Diamond Armor (HA)" << "\033[1;33m ** \033[0m" << " ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;
 	std::cout << "Item does not exist in your inventory" << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	playerClass->Favorite("Steel Sword");
 	playerClass->Favorite("Steel Sword");
 	playerClass->Favorite("Diamond Armor");
@@ -187,6 +188,7 @@ TEST(InterfaceTesting, UnfavoriteTest) {
 	std::cout << "Unfavorited Diamond Armor (HA) ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;	
 	std::cout << "Item does not exist in your inventory" << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
 	playerClass->Unfavorite("Iron Sword");
 	playerClass->Unfavorite("Steel Sword");
 	playerClass->Unfavorite("Diamond Armor");	
@@ -209,8 +211,6 @@ TEST(InterfaceTesting, HighestAttackDisplay) {
     playerClass->weapons.at(1)->Favorite();
     playerClass->armors.at(2)->Favorite();
 
-	playerClass->Display(1);
-
 	std::cout << "EXPECTS :" << std::endl;
     std::cout << "Weapons : " << std::endl;
     std::cout << "\033[1;33m ** \033[0m" << "Steel Sword (MW)" << "\033[1;33m ** \033[0m" << " "
@@ -225,14 +225,16 @@ TEST(InterfaceTesting, HighestAttackDisplay) {
 
     std::cout << "Armors : " << std::endl;
     std::cout << "\033[1;33m ** \033[0m" << "Diamond Armor (HA) " << "\033[1;33m ** \033[0m" << " "
-             << "\033[1;31m ATK \033[0m" << " : 50 "
-             << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-    std::cout << "Steel Armor (HA) " 
-               << "\033[1;31m ATK \033[0m" << " : 0 "
-              << "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
+             << "\033[1;31m ATK \033[0m" << " : 0 "
+             << "\033[1;32m DEF \033[0m" << " : 50 " << std::endl;
     std::cout << "Iron Armor (HA) " 
-              << "\033[1;31m ATK \033[0m" << " : 0 "
+               << "\033[1;31m ATK \033[0m" << " : 0 "
               << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+    std::cout << "Steel Armor (HA) " 
+              << "\033[1;31m ATK \033[0m" << " : 0 "
+              << "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->Display(1);
 
 }
 
@@ -250,20 +252,18 @@ TEST(InterfaceTesting, HighestDefenseDisplay) {
 
     playerClass->weapons.at(1)->Favorite();
     playerClass->armors.at(2)->Favorite();
-
-    playerClass->Display(2);
 	
 	std::cout << "EXPECTS : " << std::endl;
     std::cout << "Armors : " << std::endl;
     std::cout << "\033[1;33m ** \033[0m" << "Diamond Armor (HA) " << "\033[1;33m ** \033[0m" << " "
-              << "\033[1;31m ATK \033[0m" << " : 50 "
-              << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-    std::cout << "Iron Armor (HA) "
               << "\033[1;31m ATK \033[0m" << " : 0 "
-              << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+              << "\033[1;32m DEF \033[0m" << " : 50 " << std::endl;
     std::cout << "Steel Armor (HA) "
               << "\033[1;31m ATK \033[0m" << " : 0 "
               << "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
+    std::cout << "Iron Armor (HA) "
+              << "\033[1;31m ATK \033[0m" << " : 0 "
+              << "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
 	
     std::cout << "Weapons : " << std::endl;
     std::cout << "\033[1;33m ** \033[0m" << "Steel Sword (MW)" << "\033[1;33m ** \033[0m" << " "
@@ -275,6 +275,8 @@ TEST(InterfaceTesting, HighestDefenseDisplay) {
     std::cout << "Diamond Sword (MW) "
               << "\033[1;31m ATK \033[0m" << " : 50 "
               << "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->Display(2);
 
 
 }
