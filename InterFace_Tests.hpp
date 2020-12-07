@@ -1,7 +1,9 @@
-#ifndef __INTERFACE_TESTS__
-#define __INTERFACE_TESTS__
+#ifndef __INTERFACE_TESTS_HPP__
+#define __INTERFACE_TESTS_HPP__
 #include "gtest/gtest.h"
 #include <vector>
+#include <iostream>
+#include <typeinfo>
 #include "ItemOrder.hpp"
 #include "HighestAttack.hpp"
 #include "HighestDefense.hpp"
@@ -16,258 +18,264 @@
 #include "LightArmor.hpp"
 #include "HeavyArmor.hpp"
 
-/*using namespace std;*/
-TEST(InterFaceTesting, ClassCheck) {
+#include "Ranger.hpp"
+#include "Interface.hpp"
+//Ranger Interface Testing
+TEST(InterfaceTesting, ClassCheck) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
+	Interface* playerClass = new Interface(userClass);
 	playerClass->AddWeapon(10, "Bow");
+
 	Weapons* check = playerClass->weapons.back();
-	std::cout << "EXPECTS : #Ranged" << std::endl;
-	std::cout << "ACTUAL : " << typeid(*check).name() << std::endl;
-	playerClass->addArmor(10, "LightArmor");
+	std::cout << "EXPECTS : " << std::endl << "#RANGED" << std::endl;
+	std::cout << "ACTUAL : " << std::endl << typeid(*check).name() << std::endl;
+
+	playerClass->AddArmor(10, "LightArmor");
 	Armors* check2 = playerClass->armors.back();
-	std::cout << "EXPECTS : #LightArmor" << std::endl;
-	std::cout << "ACTUAL : " << typeid(*check2).name() << std::endl;
-	EXPECT_EQ(PlayerClass->weapons.size(), 1);
-	EXPECT_EQ(PlayerClass->armors.size(), 1);
-	delete userClass;
-	delete playerClass;
-	delete check;
+	std::cout << "EXPECTS : " << std::endl << "##LightArmor" << std::endl;
+	std::cout << "ACTUAL : " << std::endl << typeid(*check2).name() << std::endl;
+	EXPECT_EQ(playerClass->weapons.size(), 1);
+	EXPECT_EQ(playerClass->armors.size(), 1);
+
 }
-Test(InterfaceTesting, SameName) {
+
+TEST(InterfaceTesting, SameName) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
-	Weapons* check2 = playerClass->weapons.back();
-	std::cout << "EXPECTS: Staff (RW)";
+	Interface* playerClass = new Interface(userClass);
+
+	std::cout << "EXPECTS : " << std::endl << "LightSword (RW) ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "10" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
 	std::cout << "Item already exists in your inventory" << std::endl;
-	std::cout << "ACTUAL : ";
-	playerClass->addWeapon(10, "staff");
-	playerClass->addWeapon(15, "staff");
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->AddWeapon(10, "LightSword");
+	playerClass->AddWeapon(15, "LightSword");
+
+
 	EXPECT_EQ(playerClass->weapons.size(), 1);
 
-	
-	playerClass->AddArmor(10, "WeightlessArmor");
-	std::cout << "EXPECTS: WeightlessArmor (RW)";
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "10" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "EXPECTS : " << std::endl << "MagicArmor (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "10" << " " << std::endl;
 	std::cout << "Item already exists in your inventory" << std::endl;
-	std::cout << "ACTUAL : ";
-	playerClass->addArmor(10, "WeightlessArmor");
-	playerClass->addArmor(15, "WeightlessArmor");
-	
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(15, "MagicArmor");
+
 	EXPECT_EQ(playerClass->armors.size(), 1);
-	delete userClass;
-	delete playerClass;
-	delete check2;
+
 }
-TEST(InerFaceTesting, AddMultipleArmor) {
+
+TEST(InterfaceTesting, AddMultipleArmorsRanger) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
-	std::cout << "EXPECTS: SilverArmor (RW)";
+	Interface* playerClass = new Interface(userClass);
+
+	std::cout << "EXPECTS : " << std::endl << "MagicArmor (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "10" << " " << std::endl;
+	std::cout << "RangerArmor (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "25" << " " << std::endl;
+	std::cout << "DesertArmor (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(25, "RangerArmor");
+	playerClass->AddArmor(50, "DesertArmor");
+
+	EXPECT_EQ(playerClass->armors.size(), 3);
+
+}
+
+
+TEST(InterfaceTesting, AddMultipleWeaponsRanger) {
+	Ranger* userClass = new Ranger();
+	Interface* playerClass = new Interface(userClass);
+
+	std::cout << "EXPECTS : " << std::endl << "bow (RW) ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "10" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
-	std::cout << "EXpects: FastArmor(RW)";
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "15" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
-	std::cout << "EXpects: HalfArmor(RW)";
+	std::cout << "Staff (RW) ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "25" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "LightSword (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "50" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->AddWeapon(10, "bow");
+	playerClass->AddWeapon(25, "Staff");
+	playerClass->AddWeapon(50, "LightSword");
 
-	playerClass->addArmor(10, "SilverArmor");
-	playerClass->addArmor(15, "FastArmor");
-	playerClass->addArmor(25, "HalfArmor");
-	delete userClass;
-	delete playerClass;
-}
-TEST(InerFaceTesting, AddMultipleWeap) {
-	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
-	std::cout << "EXPECTS: Staff (RW)";
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "10" << " " << std::endl;
-	std::cout << "EXpects: Bow(RW)";
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "15" << " " << std::endl;
-	std::cout << "EXpects: LightSword(RW)";
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "25" << " " << std::endl;
+	EXPECT_EQ(playerClass->weapons.size(), 3);
 
-	playerClass->addArmor(10, "Staff");
-	playerClass->addArmor(15, "Bow");
-	playerClass->addArmor(25, "LightSword");
-	delete userClass;
-	delete playerClass;
 }
 
-TEST(InerFaceTesting, RemoveItem) {
+TEST(IntefaceTesting, RemovItems) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
-	033[0m" << " : " << "15" << " " << std::endl;
-	
-	playerClass->addArmor(10, "LightArmor");
-	playerClass->addArmor(15, "weightlessArmor");
-	playerClass->addArmor(20, "MagicArmor");
-	playerClass->addArmor(25, "HuntingArmor");
+	Interface* playerClass = new Interface(userClass);
 
+	playerClass->AddWeapon(10, "bow");
+	playerClass->AddWeapon(25, "Staff");
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(50, "DesertArmor");
 	playerClass->armors.back()->Favorite();
-	std::cout << "EXPECTS: LightArmor(RW) " << std::endl;
+
+	std::cout << "EXPECTS : " << std::endl << "Removed bow (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "10" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "Removed Staff (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "25" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->remove("bow");
+	playerClass->remove("Staff");
+
+
+	std::cout << "EXPECTS : " << std::endl << "Item does not exist in your inventory" << std::endl;
+	std::cout << "Removed MagicArmor (RW) ";
 	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "10" << " " << std::endl;
-	std::cout << "Removed LightArmor(RW) "
-		;
-	std::cout << "EXPECTS: weightlessArmor(RW) " << std::endl;
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "15" << " " << std::endl;
-	std::cout << "Removed weightlessArmor(RW) ";
+	std::cout << "item is favorited. Unfavorite to remove.";
+	std::cout << "ACTUAL : " << std::endl;
+	playerClass->remove("RangerArmor");
+	playerClass->remove("MagicArmor");
+	playerClass->remove("DesertArmor");
 
-	std::cout << "EXPECTS: MagicArmor(RW) " << std::endl;
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "20" << " " << std::endl;
-	std::cout << "Removed MagicArmor(RW) ";
-
-	std::cout << "EXPECTS: HuntingArmor(RW) " << std::endl;
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "25" << " " << std::endl;
-	std::cout << "Removed HuntingArmor(RW) ";
-
-	std::cout << "EXPECTS: " << std::endl;
-
-	playerClass->removed("LightArmor");
-	playerClass->removed("weightlessArmor");
-	playerClass->removed("MagicArmor");
-	playerClass->removed("HuntingArmor");
 
 	EXPECT_EQ(playerClass->weapons.size(), 0);
 	EXPECT_EQ(playerClass->armors.size(), 1);
-	delete userClass;
-	delete playerClass;
-}
-TEST(InerFaceTesting, FavTest) {
-	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
-	playerClass->addWeapon(10, "LightSword");
-	playerClass->addWeapon(25, "bow");
-	playerClass->addWeapon(50, "staff");
 
-	playerClass->AddArmor(10, "LightArmor");
-	playerClass->AddArmor(25, "MagicArmor");
-	playerClass->AddArmor(50, "HuntingArmor");
-	
+}
+
+TEST(InterfaceTesting, FavTest) {
+	Ranger* userClass = new Ranger();
+	Interface* playerClass = new Interface(userClass);
+
+
+	playerClass->AddWeapon(10, "bow");
+	playerClass->AddWeapon(25, "Staff");
+	playerClass->AddWeapon(50, "LightSword");
+
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(25, "RangerArmor");
+	playerClass->AddArmor(50, "DesertArmor");
+
 	std::cout << "EXPECTS : " << std::endl;
-	
-	std::cout <<"favorited"<< "\033[1;33m  ** \033[0m" << "bow(RW)" << "\033[1;33m  ** \033[0m" << " ";
-	std::cout << "\033[1;31m ATK \033[0m" << " : " << "10" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "Favorited " << "\033[1;33m ** \033[0m" << "Staff (RW)" << "\033[1;33m ** \033[0m" << " ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "25" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
 	std::cout << "Item is already favorited." << std::endl;
+	std::cout << "Favorited " << "\033[1;33m ** \033[0m" << "DesertArmor (RW)" << "\033[1;33m ** \033[0m" << " ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;
 	std::cout << "Item does not exist in your inventory" << std::endl;
-	std::cout << "favorited" << "\033[1;33m  ** \033[0m" << "LightArmor(RW)" << "\033[1;33m  ** \033[0m" << " ";
+	playerClass->Favorite("Staff");
+	playerClass->Favorite("Staff");
+	playerClass->Favorite("DesertArmor");
+	playerClass->Favorite("Test");
 
-	playerClass->Favorite("bow");
-	playerClass->Favorite("bow");
-	playerClass->Favorite("LightArmor");
-	playerClass->Favorite("DontExist");
-	delete userClass;
-	delete playerClass
 }
 
-TEST(InerFaceTesting, UnFavTest) {
+TEST(InterfaceTesting, UnfavTest) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
-	playerClass->addWeapon(10, "LightSword");
-	playerClass->addWeapon(25, "bow");
-	playerClass->addWeapon(50, "staff");
+	Interface* playerClass = new Interface(userClass);
 
-	playerClass->AddArmor(10, "LightArmor");
-	playerClass->AddArmor(25, "MagicArmor");
-	playerClass->AddArmor(50, "HuntingArmor");
+	playerClass->AddWeapon(10, "bow");
+	playerClass->AddWeapon(25, "Staff");
+	playerClass->AddWeapon(50, "LightSword");
+
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(25, "RangerArmor");
+	playerClass->AddArmor(50, "DesertArmor");
 
 	playerClass->weapons.at(1)->Favorite();
-	playerClass->armors.at(1)->Favorite();
+	playerClass->armors.at(2)->Favorite();
+
 
 	std::cout << "EXPECTS : " << std::endl;
-	std::cout << "Unfavorited LightSword." << std::endl;
-	std::cout << "Unfavorited" << std::cout << "\033[1;31m ATK \033[0m" << " : " << "10" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
-
-	std::cout << "Unfavorited bow." << std::endl;
-	std::cout << "Unfavorited" << std::cout << "\033[1;31m ATK \033[0m" << " : " << "25" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "Item is already unfavorited." << std::endl;
+	std::cout << "Unfavorited Staff (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "25" << " " << "\033[1;32m DEF \033[0m" << " : " << "0" << " " << std::endl;
+	std::cout << "Unfavorited DesertArmor (RW) ";
+	std::cout << "\033[1;31m ATK \033[0m" << " : " << "0" << " " << "\033[1;32m DEF \033[0m" << " : " << "50" << " " << std::endl;
 	std::cout << "Item does not exist in your inventory" << std::endl;
-
-	playerClass->Unfavorite("LightSword");
 	playerClass->Unfavorite("bow");
-	playerClass->Unfavorite("DontExist");
-	delete userClass;
-	delete playerClass
+	playerClass->Unfavorite("Staff");
+	playerClass->Unfavorite("DesertArmor");
+	playerClass->Unfavorite("test");
 
 }
-TEST(InerFaceTesting, HightAttDisplay) {
+
+TEST(InterfaceTesting, HighestAttackDisplayRanger) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
+	Interface* playerClass = new Interface(userClass);
 
-	playerClass->addWeapon(10, "LightSword");
-	playerClass->addWeapon(25, "bow");
-	playerClass->addWeapon(50, "staff");
+	playerClass->AddWeapon(10, "bow");
+	playerClass->AddWeapon(25, "Staff");
+	playerClass->AddWeapon(50, "LightSword");
 
-	playerClass->AddArmor(10, "LightArmor");
-	playerClass->AddArmor(25, "MagicArmor");
-	playerClass->AddArmor(50, "HuntingArmor");
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(25, "RangerArmor");
+	playerClass->AddArmor(50, "DesertArmor");
 
 	playerClass->weapons.at(1)->Favorite();
-	playerClass->armors.at(1)->Favorite();
+	playerClass->armors.at(2)->Favorite();
 
 	playerClass->Display(1);
+
 	std::cout << "EXPECTS :" << std::endl;
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "\033[1;33m  \033[0m" << "LightSword (RW)" << "\033[1;33m  \033[0m" << " "
-		<< "\033[1;31m ATK \033[0m" << " : 10 "
-		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "bow (RW) "
+	std::cout << "\033[1;33m ** \033[0m" << "Staff (RW)" << "\033[1;33m ** \033[0m" << " "
 		<< "\033[1;31m ATK \033[0m" << " : 25 "
 		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "staff (RW) "
+	std::cout << "LightSword (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 50 "
 		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "Armor : " << std::endl;
-	std::cout << "\033[1;33m  \033[0m" << "LightArmor (RW)" << "\033[1;33m  \033[0m" << " "
-		<< "\033[1;31m ATK \033[0m" << " : 0 "
-		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
-	std::cout << "MagicArmor (RW) "
+	std::cout << "bow (RW) "
+		<< "\033[1;31m ATK \033[0m" << " : 10 "
+		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+
+	std::cout << "Armors : " << std::endl;
+	std::cout << "\033[1;33m ** \033[0m" << "DesertArmor (RW) " << "\033[1;33m ** \033[0m" << " "
+		<< "\033[1;31m ATK \033[0m" << " : 50 "
+		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "RangerArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
 		<< "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
-	std::cout << "HuntingArmor (RW) "
+	std::cout << "MagicArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
-		<< "\033[1;32m DEF \033[0m" << " : 50 " << std::endl;
-	delete userClass;
-	delete playerClass
+		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+
 }
-TEST(InerFaceTesting, HightDefDisplay) {
+
+TEST(InterfaceTesting, HighestDefenseDisplayRanger) {
 	Ranger* userClass = new Ranger();
-	Interface* PlayerClass = new Interface(userClass);
+	Interface* playerClass = new Interface(userClass);
 
-	playerClass->addWeapon(10, "LightSword");
-	playerClass->addWeapon(25, "bow");
-	playerClass->addWeapon(50, "staff");
+	playerClass->AddWeapon(10, "bow");
+	playerClass->AddWeapon(25, "Staff");
+	playerClass->AddWeapon(50, "LightSword");
 
-	playerClass->AddArmor(10, "LightArmor");
-	playerClass->AddArmor(25, "MagicArmor");
-	playerClass->AddArmor(50, "HuntingArmor");
+	playerClass->AddArmor(10, "MagicArmor");
+	playerClass->AddArmor(25, "RangerArmor");
+	playerClass->AddArmor(50, "DesertArmor");
 
 	playerClass->weapons.at(1)->Favorite();
-	playerClass->armors.at(1)->Favorite();
+	playerClass->armors.at(2)->Favorite();
 
 	playerClass->Display(2);
-	std::cout << "EXPECTS :" << std::endl;
-	std::cout << "Armor : " << std::endl;
-	std::cout << "\033[1;33m  \033[0m" << "LightArmor (RW)" << "\033[1;33m  \033[0m" << " "
-		<< "\033[1;31m ATK \033[0m" << " : 0 "
-		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+
+	std::cout << "EXPECTS : " << std::endl;
+	std::cout << "Armors : " << std::endl;
+	std::cout << "\033[1;33m ** \033[0m" << "DesertArmor (RW) " << "\033[1;33m ** \033[0m" << " "
+		<< "\033[1;31m ATK \033[0m" << " : 50 "
+		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 	std::cout << "MagicArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
-		<< "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
-	std::cout << "HuntingArmor (RW) "
+		<< "\033[1;32m DEF \033[0m" << " : 10 " << std::endl;
+	std::cout << "RangerArmor (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 0 "
-		<< "\033[1;32m DEF \033[0m" << " : 50 " << std::endl;
+		<< "\033[1;32m DEF \033[0m" << " : 25 " << std::endl;
+
 	std::cout << "Weapons : " << std::endl;
-	std::cout << "\033[1;33m  \033[0m" << "LightSword (RW)" << "\033[1;33m  \033[0m" << " "
-		<< "\033[1;31m ATK \033[0m" << " : 10 "
-		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "bow (RW) "
+	std::cout << "\033[1;33m ** \033[0m" << "Staff (RW)" << "\033[1;33m ** \033[0m" << " "
 		<< "\033[1;31m ATK \033[0m" << " : 25 "
 		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
-	std::cout << "staff (RW) "
+	std::cout << "bow (RW) "
+		<< "\033[1;31m ATK \033[0m" << " : 10 "
+		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
+	std::cout << "LightSword (RW) "
 		<< "\033[1;31m ATK \033[0m" << " : 50 "
 		<< "\033[1;32m DEF \033[0m" << " : 0 " << std::endl;
 
 
-	delete userClass;
-	delete playerClass
 }
 #endif
