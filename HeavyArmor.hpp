@@ -2,6 +2,8 @@
 #define __HEAVYARMOR_HPP__
 
 #include "Armors.hpp"
+#include "UnlockedState.hpp"
+#include "LockedState.hpp"
 //using namespace std;
 class HeavyArmor : public Armors {
 public:

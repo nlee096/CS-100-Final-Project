@@ -9,12 +9,9 @@
 #include "Armors.hpp"
 #include "Weapons.hpp"
 #include "ItemOrder.hpp"
+#include "HighestAttack.hpp"
+#include "HighestDefense.hpp"
 
-/*
- * changes:
- * UserClass becamse UserClass* 
- * constructor with UserClass* arguement
- * */
 
 class Interface{
 	private:
@@ -42,9 +39,11 @@ class Interface{
 			if(organizer != nullptr){
 				delete organizer;
 			}
+/*
 			if(playerClass != nullptr){
 				delete playerClass;
 			}
+*/
 		}
 
 		void AddArmor(int stat, std::string name){

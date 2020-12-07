@@ -2,6 +2,8 @@
 #define __RANGED_HPP__
 
 #include "Weapons.hpp"
+#include "UnlockedState.hpp"
+#include "LockedState.hpp"
 //using namespace std;
 class Ranged : public Weapons {
     public:
@@ -11,6 +13,9 @@ class Ranged : public Weapons {
             defense = 0;
             currentState = new UnlockedState();
         }
+	~Ranged(){
+		delete currentState;
+	}
         void Favorite() {
 			if(currentState->getState()) {
 				return;

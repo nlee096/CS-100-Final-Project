@@ -2,7 +2,8 @@
 #define __MELEE_HPP__
 
 #include "Weapons.hpp"
-
+#include "UnlockedState.hpp"
+#include "LockedState.hpp"
 class Melee : public Weapons {
 	public:
         Melee(int atk, std::string name) {
