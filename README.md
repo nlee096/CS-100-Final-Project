@@ -143,4 +143,8 @@
 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > 
+ > The Game Inventory project was tested by running numerous unit and integration tests. Unit tests were created and run to make sure the items (Weapons and Armors) properly run their functions and return correct information. For classes that work in conjunction with other classes, integration tests were made to determine that the program can properly use the information and functions of the other classes. For some test cases, outputs could not be directly compared to show if the test passed or not. For these cases, the output was displayed in the console/terminal and manually compared to confirm the test cases passed. Some test files include both unit tests and integration tests such as Melee and Ranged weapon tests. Because some functions in the product subclasses call 
+
+
  
