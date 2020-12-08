@@ -109,6 +109,38 @@
 
  ## Installation/Usage
  > Instructions on installing and running your application
+ > 
+ > Installation Instruction:
+ > * Step 1: Clone the Respository 
+ >   - To clone the repository, go to the upper right of the github repository page and click the green button labeled “Code” with a download and dropdown menu icons. This should show a drop down menu with labels “Clone”, “Open with GitHub Desktop” and “Download ZIP”. Under the “Clone” label, make sure HTTPS is chosen (underlined) and copy the link in the box below. This is the GitHub repository url which you will use to clone that repository. Now, run the following command: git clone <github-url> . This will create a new folder that is a clone of the project repository.   
+ > * Step 2: The Executable
+ >   - Run the command cmake3 . followed by the command make. This will create two executables called test and inventory. To run the test run the command ./test and to run the program run ./inventory
+ > 
+ > 
+ > Usage Instructions:
+ > 
+ > Execute the program by entering the executable ./inventory in your command line terminal.
+ > 
+ > Once the program starts, it will prompt the user to indicate what class (Ranger or Warrior) they are by inputting the number corresponding to the class. This will change what the main menu is titled by adding the input class in front of the title “Inventory Menu”. If a number besides 1 or 2 is input, the program will display an invalid input message and prompt the user to try again until a valid input is input. After, the program will display a menu with number options followed by the corresponding action. The user is prompted to input a number to run the action corresponding to the input number. If an input not 1 to 7 is input, an invalid input message will be displayed and the program will prompt the user to try again until a valid input is input. 
+> * How to add an armor in your inventory:
+>   - By inputting 1, the user is able to add an armor into their inventory. The program will then prompt the user to input the armor item’s name. The user cannot input the name of an item already in the inventory as this will be an invalid input. To submit, the user must hit the enter key. The program will then prompt the user to input the defense stat associated with the armor item. Once entered, the program will create that armor and display its information. The user will then be sent back to the main menu. Invalid inputs also display an error message and return the user back to the main menu.
+> * How to add a weapon to your inventory:
+>   - By inputting 2, the user is able to add a weapon into their inventory. The program will then prompt the user to input the weapon item’s name. The user cannot input the name of an item already in the inventory as this will be an invalid input. To submit, the user must hit the enter key. The program will then prompt the user to input the attack stat associated with the weapon item. Once entered, the program will create that weapon and display its information. The user will then be sent back to the main menu. Invalid inputs also display an error message and return the user back to the main menu.
+> * How to remove an item from your inventory:
+>   - By inputting 3, the user will be able to choose an item to remove from their inventory. They will be prompted to enter the name of the item that they wish to remove. If they enter an item that does not exist, it will display a message indicating that the item does not exist and will return them to the main menu. If they input a valid item to remove, that item will be removed from their inventory shown by the program outputting a message indicating that the item was removed. Invalid inputs also display an error message and return the user back to the main menu.
+> * How to favorite an item:
+>   - By inputting 4, the user is able to favorite any item in their inventory. The program will then prompt the user to input the item’s name. To submit, the user must hit the enter key. Once entered, the program will indicate the item was favorited by outputting the item in the format unique to favorited items. If the item is already favorited, the program will display a message indicating that the item is already favorited. If the item does not exist, the program will display a message indicating that the item does not exist in the inventory. The user will then be sent back to the main menu. Invalid inputs also display an error message and return the user back to the main menu.
+> * How to unfavorite an item:
+>   - By inputting 5, the user is able to unfavorite any item in their inventory. The program will then prompt the user to input the item’s name. To submit, the user must hit the enter key. Once entered, the program will indicate the item was unfavorited by outputting the item in the standard formatting. If the item is already unfavorited, the program will display a message indicating that it is already unfavorited. If the item does not exist, the program will display a message indicating that the item does not exist in the inventory. The user will then be sent back to the main menu. Invalid inputs also display an error message and return the user back to the main menu.
+> * How to display your inventory : 
+>   - By inputting 6, the program will display another menu with a number list of actions for displaying. The user will then be prompted to enter another set of values 1, 2, or 3 in order to display their inventory in specific orders. Invalid inputs also display an error message and return the user back to the main menu.
+>     - If option 1 is selected by the user inputting the number 1, the terminal will display the weapons and armors in the user’s current inventory in the order of highest attack while accounting for favorited items by displaying them first. Items with the same attack stats will be displayed in the order the user input them.
+>     - If option 2 is selected by the user inputting the number 2, the terminal will display the armors and weapons in the user’s current inventory in the order of highest defense while accounting for favorited items by displaying them first. Items with the same defense stats will be displayed in the order the user input them.
+>     - If option 3 is selected by the user inputting the number 3, the user will exit out of this menu and be brought back to the main menu where they can continue to choose other options. This is shown by the main menu being displayed once again.
+>   - If option 7 is chosen by the user through the input of 7 in the main menu, the program will output a message indicating the ending of the program followed by the ending of the program.
+
+ 
+
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
