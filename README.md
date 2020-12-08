@@ -88,8 +88,14 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
+ > 
  > The program prompts for the user’s class by inputting the number corresponding to their chosen class. The program then outputs a numbered list of possible actions that the user can execute in the inventory. By inputting the number left of the action, the user can execute the corresponding action. 
- >
+ > * Warrior class chosen:
+ > <img src="images/Warrior_Class_Input.png">
+ 
+ > * Ranger class chosen:
+ > <img src="images/Ranger_Class_Input.png">
+ > 
  > If option 1 was input by the user, it prompts the user to input an armor name followed by the armor's defense. Once entered, the program will create an armor with that input name and stats based on the class chosen previously. The armor typing will be heavy or light armor, depending on the user class. After adding the armor, the user will be brought back to the main menu. (invalid inputs outputs an error message and returns user back to main menu)
 >
 > If option 2 was input by the user, it prompts the user to input a weapon name followed by the weapons attack. Once entered, based on the class chosen previously, the program will create a weapon with that input name and stats. The weapon typing will be melee or ranged depending on the user class. After adding the armor, the user will be brought back to the main menu. (invalid inputs outputs an error message and returns user back to main menu)
