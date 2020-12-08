@@ -88,6 +88,25 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
+ > The program prompts for the user’s class by inputting the number corresponding to their chosen class. The program then outputs a numbered list of possible actions that the user can execute in the inventory. By inputting the number left of the action, the user can execute the corresponding action. 
+ >
+ > If option 1 was input by the user, it prompts the user to input an armor name followed by the armor's defense. Once entered, the program will create an armor with that input name and stats based on the class chosen previously. The armor typing will be heavy or light armor, depending on the user class. After adding the armor, the user will be brought back to the main menu. (invalid inputs outputs an error message and returns user back to main menu)
+>
+> If option 2 was input by the user, it prompts the user to input a weapon name followed by the weapons attack. Once entered, based on the class chosen previously, the program will create a weapon with that input name and stats. The weapon typing will be melee or ranged depending on the user class. After adding the armor, the user will be brought back to the main menu. (invalid inputs outputs an error message and returns user back to main menu)
+>
+> If option 3 was input by the user, it prompts the user to input the name of an item they want to remove and then proceeds to remove that item from the appropriate vector whether it is a weapon or armor. (Invalid inputs will return a statement in which the item does not exist in the inventory and return the user back to main menu)
+>
+> If option 4 was input by the user, it prompts the user to enter the name of the item they want to be favorited. If the input is valid, the program will output the item in a format unique to favorited items. (Invalid inputs will return a statement in which the item already favorited or does not exist in their inventory and return the user back to main menu)
+>
+> If option 5 was input by the user, it prompts the user to enter the name of the item they want to be unfavorited. If the input is valid, the program will output the item in a format unique to favorited items. (Invalid inputs will return a statement in which the item already unfavorited or does not exist in their inventory and return the user back to main menu)
+>
+> If option 6 was input by the user, the program will display another menu with a number list of actions for displaying. The user will then be prompted to enter another set of values 1, 2, or 3 in order to display their inventory in specific orders. Invalid inputs display an error message and return the user back to the main menu.
+> * If option 1 is selected by the user inputting the number 1, the terminal will display the weapons and armors in the user’s current inventory in the order of highest attack while accounting for favorited items by displaying them first. Items with the same attack stats will be displayed in the order the user input them.
+> * If option 2 is selected by the user inputting the number 2, the terminal will display the armors and weapons in the user’s current inventory in the order of highest defense while accounting for favorited items by displaying them first. Items with the same defense stats will be displayed in the order the user input them.
+> * If option 3 is selected by the user inputting the number 3, the user will exit out of this menu and be brought back to the main menu where they can continue to choose other options. This is shown by the main menu being displayed once again.
+> 
+> If option 7 is chosen by the user through the input of 7 in the main menu, the program will output a message indicating the ending of the program followed by the ending of the program.
+
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
