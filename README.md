@@ -117,21 +117,34 @@
 > <img src="images/Ranger_AddWeapon.PNG">
 >
 > If option 3 was input by the user, it prompts the user to input the name of an item they want to remove and then proceeds to remove that item from the appropriate vector whether it is a weapon or armor. (Invalid inputs will return a statement in which the item does not exist in the inventory and return the user back to main menu)
+> 
 > <img src="images/Remove.PNG">
 >
 > If option 4 was input by the user, it prompts the user to enter the name of the item they want to be favorited. If the input is valid, the program will output the item in a format unique to favorited items. (Invalid inputs will return a statement in which the item already favorited or does not exist in their inventory and return the user back to main menu)
+> 
 > <img src="images/Favorite.PNG">
 >
 > If option 5 was input by the user, it prompts the user to enter the name of the item they want to be unfavorited. If the input is valid, the program will output the item in a format unique to favorited items. (Invalid inputs will return a statement in which the item already unfavorited or does not exist in their inventory and return the user back to main menu)
+> 
 > <img src="images/Unfavorite.PNG">
 >
 > If option 6 was input by the user, the program will display another menu with a number list of actions for displaying. The user will then be prompted to enter another set of values 1, 2, or 3 in order to display their inventory in specific orders. Invalid inputs display an error message and return the user back to the main menu.
 > * If option 1 is selected by the user inputting the number 1, the terminal will display the weapons and armors in the user’s current inventory in the order of highest attack while accounting for favorited items by displaying them first. Items with the same attack stats will be displayed in the order the user input them.
+> 
+> <img src="images/DisplayHighestAttack.PNG">
+>
 > * If option 2 is selected by the user inputting the number 2, the terminal will display the armors and weapons in the user’s current inventory in the order of highest defense while accounting for favorited items by displaying them first. Items with the same defense stats will be displayed in the order the user input them.
+> 
+> <img src="images/DisplayHighestDefense.PNG">
+> 
 > * If option 3 is selected by the user inputting the number 3, the user will exit out of this menu and be brought back to the main menu where they can continue to choose other options. This is shown by the main menu being displayed once again.
 > 
+> <img src="images/DisplayClose.PNG">
+> 
 > If option 7 is chosen by the user through the input of 7 in the main menu, the program will output a message indicating the ending of the program followed by the ending of the program.
+> 
 > <img src="images/Close.PNG">
+> 
  ## Installation/Usage
  > Instructions on installing and running your application
  > 
