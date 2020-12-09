@@ -167,7 +167,7 @@
 >     - If option 1 is selected by the user inputting the number 1, the terminal will display the weapons and armors in the user’s current inventory in the order of highest attack while accounting for favorited items by displaying them first. Items with the same attack stats will be displayed in the order the user input them.
 >     - If option 2 is selected by the user inputting the number 2, the terminal will display the armors and weapons in the user’s current inventory in the order of highest defense while accounting for favorited items by displaying them first. Items with the same defense stats will be displayed in the order the user input them.
 >     - If option 3 is selected by the user inputting the number 3, the user will exit out of this menu and be brought back to the main menu where they can continue to choose other options. This is shown by the main menu being displayed once again.
->   - If option 7 is chosen by the user through the input of 7 in the main menu, the program will output a message indicating the ending of the program followed by the ending of the program.
+>  - If option 7 is chosen by the user through the input of 7 in the main menu, the program will output a message indicating the ending of the program followed by the ending of the program.
 
  
 
