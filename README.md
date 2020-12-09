@@ -90,31 +90,23 @@
  > Screenshots of the input/output after running your application
  > 
  > The program prompts for the user’s class by inputting the number corresponding to their chosen class. The program then outputs a numbered list of possible actions that the user can execute in the inventory. By inputting the number left of the action, the user can execute the corresponding action. 
- > * Warrior class chosen:
- > <img src="images/Warrior_Class_Input.PNG">
+ > Warrior Class Chosen : | Ranger Class Chosen :
+ > --------|--------
+ > <img src="images/Warrior_Class_Input.PNG"> | <img src="images/Ranger_Class_Input.PNG">
  > 
- > * Warrior Class Main Menu
- > <img src="images/Warrior_Main_Menu.PNG">
- > 
- > * Ranger class chosen:
- > <img src="images/Ranger_Class_Input.PNG">
- >  
- > * Ranger Class Main Menu
- > <img src="images/Ranger_Main_Menu.PNG">
- > 
+ > Warrior Main Menu : | Ranger Main Menu : 
+ > --------------------|--------------------
+ > <img src="images/Warrior_Main_Menu.PNG"> | <img src="images/Ranger_Main_Menu.PNG">
+ >
  > If option 1 was input by the user, it prompts the user to input an armor name followed by the armor's defense. Once entered, the program will create an armor with that input name and stats based on the class chosen previously. The armor typing will be heavy or light armor, depending on the user class. After adding the armor, the user will be brought back to the main menu. (invalid inputs outputs an error message and returns user back to main menu)
-> * Warrior class : 
-> <img src="images/Warrior_AddArmor.PNG">
-> 
-> * Ranger class : 
-> <img src="images/Ranger_AddArmor.PNG">
+> Warrior class : | Ranger class :
+> --------|--------
+> <img src="images/Warrior_AddArmor.PNG"> | <img src="images/Ranger_AddArmor.PNG">
 >
 > If option 2 was input by the user, it prompts the user to input a weapon name followed by the weapons attack. Once entered, based on the class chosen previously, the program will create a weapon with that input name and stats. The weapon typing will be melee or ranged depending on the user class. After adding the armor, the user will be brought back to the main menu. (invalid inputs outputs an error message and returns user back to main menu)
-> * Warrior class : 
-> <img src="images/Warrior_AddWeapon.PNG"> 
-> 
-> * Ranger class : 
-> <img src="images/Ranger_AddWeapon.PNG">
+>  Warrior class : | Ranger class :
+> --------|-------- 
+> <img src="images/Warrior_AddWeapon.PNG"> | <img src="images/Ranger_AddWeapon.PNG">
 >
 > If option 3 was input by the user, it prompts the user to input the name of an item they want to remove and then proceeds to remove that item from the appropriate vector whether it is a weapon or armor. (Invalid inputs will return a statement in which the item does not exist in the inventory and return the user back to main menu)
 > 
