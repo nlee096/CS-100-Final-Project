@@ -13,6 +13,9 @@ class Weapons {
         State* currentState;
     public:
         Weapons() {};
+	~Weapons(){
+		delete currentState;
+	}
         virtual void Favorite() = 0;
         virtual void Unfavorite() = 0;
         virtual void Display() = 0;

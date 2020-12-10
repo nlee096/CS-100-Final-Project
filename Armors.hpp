@@ -12,6 +12,9 @@ protected:
     State* currentState;
 public:
     Armors() {};
+    ~Armors(){
+	delete currentState;
+    }
     virtual void Favorite() = 0;
     virtual void Unfavorite() = 0;
     virtual void Display() = 0;
