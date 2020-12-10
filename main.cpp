@@ -128,6 +128,6 @@ int main() {
 	}
 	delete playerClass;
 	delete controlPanel;
-	return 0;
+return 0;
 	
 }

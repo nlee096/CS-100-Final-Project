@@ -39,11 +39,9 @@ class Interface{
 			if(organizer != nullptr){
 				delete organizer;
 			}
-/*
-			if(playerClass != nullptr){
-				delete playerClass;
+			if(organizer != nullptr){
+				delete organizer;
 			}
-*/
 		}
 
 		void AddArmor(int stat, std::string name){
@@ -126,6 +124,7 @@ class Interface{
 							std::cout << "Removed ";
 							weapons.at(r)->Display();
 							std::cout << "\033[1;31m ATK \033[0m" << " : " << weapons.at(r)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << weapons.at(r)->getDefense() << " " << endl;
+							delete weapons.at(r);
 							weapons.erase(weapons.begin() + r);
 							existsR = true;
 						}
@@ -143,6 +142,7 @@ class Interface{
 								std::cout << "Removed ";
 								armors.at(r2)->Display();
 								std::cout << "\033[1;31m ATK \033[0m" << " : " << armors.at(r2)->getAttack() << " " << "\033[1;32m DEF \033[0m" << " : " << armors.at(r2)->getDefense() << " " << endl;
+								delete armors.at(r2);
 								armors.erase(armors.begin() + r2);
 								existsR = true;
 							}
@@ -252,14 +252,18 @@ class Interface{
 			}
 			else{
 				if(order == 1){
+					if(organizer != nullptr){
+						delete organizer;
+					}
 					organizer = new HighestAttack();
 					organizer -> Display(weapons, armors);
-					delete organizer;
 				}
 				else if(order == 2){
+					if(organizer != nullptr){
+                                                delete organizer;
+                                        }
 					organizer = new HighestDefense();
 					organizer -> Display(weapons, armors);
-					delete organizer;
 				}
 			}
 		}

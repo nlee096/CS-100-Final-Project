@@ -13,9 +13,6 @@ class Ranged : public Weapons {
             defense = 0;
             currentState = new UnlockedState();
         }
-	~Ranged(){
-		delete currentState;
-	}
         void Favorite() {
 			if(currentState->getState()) {
 				return;
